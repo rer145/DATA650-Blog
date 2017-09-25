@@ -2,57 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Minimal</title>
-    <link>/</link>
+    <link>http://ronrichardson.netlify.com/</link>
     <description>Recent content on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://ronrichardson.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project 1</title>
-      <link>/project/project1/</link>
+      <link>http://ronrichardson.netlify.com/project/project1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project1/</guid>
+      <guid>http://ronrichardson.netlify.com/project/project1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 2</title>
-      <link>/project/project2/</link>
+      <link>http://ronrichardson.netlify.com/project/project2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project2/</guid>
+      <guid>http://ronrichardson.netlify.com/project/project2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 3</title>
-      <link>/project/project3/</link>
+      <link>http://ronrichardson.netlify.com/project/project3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project3/</guid>
+      <guid>http://ronrichardson.netlify.com/project/project3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 4</title>
-      <link>/project/project4/</link>
+      <link>http://ronrichardson.netlify.com/project/project4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project4/</guid>
+      <guid>http://ronrichardson.netlify.com/project/project4/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Test Post</title>
+      <link>http://ronrichardson.netlify.com/post/test-post/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://ronrichardson.netlify.com/post/test-post/</guid>
+      <description>library(Lahman)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionBatting %&amp;gt;%select(playerID, HR) %&amp;gt;%filter(HR &amp;gt; 50)## playerID HR## 1 ruthba01 54## 2 ruthba01 59## 3 ruthba01 60## 4 ruthba01 54## 5 wilsoha01 56## 6 foxxji01 58## 7 greenha01 58## 8 kinerra01 51## 9 mizejo01 51## 10 kinerra01 54## 11 mayswi01 51## 12 mantlmi01 52## 13 mantlmi01 54## 14 marisro01 61## 15 mayswi01 52## 16 fostege01 52## 17 fieldce01 51## 18 mcgwima01 52## 19 griffke02 56## 20 griffke02 56## 21 mcgwima01 70## 22 sosasa01 66## 23 mcgwima01 65## 24 sosasa01 63## 25 bondsba01 73## 26 gonzalu01 57## 27 rodrial01 52## 28 sosasa01 64## 29 rodrial01 57## 30 thomeji01 52## 31 jonesan01 51## 32 howarry01 58## 33 ortizda01 54## 34 rodrial01 54## 35 bautijo02 54## 36 davisch02 53</description>
+    </item>
+    
+    <item>
       <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <link>http://ronrichardson.netlify.com/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <guid>http://ronrichardson.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
@@ -60,30 +69,30 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     
     <item>
       <title>Creating a New Theme</title>
-      <link>/post/creating-a-new-theme/</link>
+      <link>http://ronrichardson.netlify.com/post/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/creating-a-new-theme/</guid>
+      <guid>http://ronrichardson.netlify.com/post/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>/post/goisforlovers/</link>
+      <link>http://ronrichardson.netlify.com/post/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/goisforlovers/</guid>
+      <guid>http://ronrichardson.netlify.com/post/goisforlovers/</guid>
       <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>/post/hugoisforlovers/</link>
+      <link>http://ronrichardson.netlify.com/post/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/hugoisforlovers/</guid>
+      <guid>http://ronrichardson.netlify.com/post/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo
@@ -94,10 +103,10 @@ Follow the following steps:
     
     <item>
       <title>Migrate from Jekyll</title>
-      <link>/post/migrate-from-jekyll/</link>
+      <link>http://ronrichardson.netlify.com/post/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/migrate-from-jekyll/</guid>
+      <guid>http://ronrichardson.netlify.com/post/migrate-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>

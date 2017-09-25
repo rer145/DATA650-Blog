@@ -1,0 +1,19 @@
+---
+title: Test Post
+author: Ron Richardson
+date: '2017-09-25'
+slug: test-post
+categories: []
+tags:
+  - test
+---
+
+```{r}
+library(Lahman)
+library(dplyr)
+
+Batting %>%
+  select(playerID, HR) %>%
+  filter(HR > 50)
+```
+

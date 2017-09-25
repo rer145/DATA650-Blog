@@ -1,0 +1,62 @@
+---
+title: Test Post
+author: Ron Richardson
+date: '2017-09-25'
+slug: test-post
+categories: []
+tags:
+  - test
+---
+
+
+
+<pre class="r"><code>library(Lahman)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>Batting %&gt;%
+  select(playerID, HR) %&gt;%
+  filter(HR &gt; 50)</code></pre>
+<pre><code>##     playerID HR
+## 1   ruthba01 54
+## 2   ruthba01 59
+## 3   ruthba01 60
+## 4   ruthba01 54
+## 5  wilsoha01 56
+## 6   foxxji01 58
+## 7  greenha01 58
+## 8  kinerra01 51
+## 9   mizejo01 51
+## 10 kinerra01 54
+## 11  mayswi01 51
+## 12 mantlmi01 52
+## 13 mantlmi01 54
+## 14 marisro01 61
+## 15  mayswi01 52
+## 16 fostege01 52
+## 17 fieldce01 51
+## 18 mcgwima01 52
+## 19 griffke02 56
+## 20 griffke02 56
+## 21 mcgwima01 70
+## 22  sosasa01 66
+## 23 mcgwima01 65
+## 24  sosasa01 63
+## 25 bondsba01 73
+## 26 gonzalu01 57
+## 27 rodrial01 52
+## 28  sosasa01 64
+## 29 rodrial01 57
+## 30 thomeji01 52
+## 31 jonesan01 51
+## 32 howarry01 58
+## 33 ortizda01 54
+## 34 rodrial01 54
+## 35 bautijo02 54
+## 36 davisch02 53</code></pre>
