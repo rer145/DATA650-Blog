@@ -3,155 +3,155 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://ronrichardson.netlify.com/project/project1/</loc>
+    <loc>/project/project1/</loc>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/project/project2/</loc>
+    <loc>/project/project2/</loc>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/project/project3/</loc>
+    <loc>/project/project3/</loc>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/project/project4/</loc>
+    <loc>/project/project4/</loc>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/post/using-ggplot-interactive-bar-plots/</loc>
+    <loc>/post/using-ggplot-interactive-bar-plots/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/post/using-ggplot-time-series/</loc>
+    <loc>/post/using-ggplot-time-series/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/post/using-ggplot-bar-plots/</loc>
+    <loc>/post/using-ggplot-bar-plots/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/post/using-ggplot-histograms/</loc>
+    <loc>/post/using-ggplot-histograms/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/post/scatterplots-in-r/</loc>
+    <loc>/post/scatterplots-in-r/</loc>
     <lastmod>2017-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/post/lahman-database-using-dplyr/</loc>
+    <loc>/post/lahman-database-using-dplyr/</loc>
     <lastmod>2017-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/bootstrap/</loc>
+    <loc>/tags/bootstrap/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/charts/</loc>
+    <loc>/tags/charts/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/css/</loc>
+    <loc>/tags/css/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/</loc>
+    <loc>/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/categories/data-650/</loc>
+    <loc>/categories/data-650/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/ggiraph/</loc>
+    <loc>/tags/ggiraph/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/go/</loc>
+    <loc>/tags/go/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/golang/</loc>
+    <loc>/tags/golang/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/highlight-js/</loc>
+    <loc>/tags/highlight-js/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/html/</loc>
+    <loc>/tags/html/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/hugo/</loc>
+    <loc>/tags/hugo/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/js/</loc>
+    <loc>/tags/js/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/project/</loc>
+    <loc>/project/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/responsive/</loc>
+    <loc>/tags/responsive/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/syntax-highlighting/</loc>
+    <loc>/tags/syntax-highlighting/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ronrichardson.netlify.com/tags/visualization/</loc>
+    <loc>/tags/visualization/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
