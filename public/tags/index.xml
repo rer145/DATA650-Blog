@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://ronrichardson.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://ronrichardson.netlify.com/tags/bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charts</title>
+      <link>http://ronrichardson.netlify.com/tags/charts/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://ronrichardson.netlify.com/tags/charts/</guid>
       <description></description>
     </item>
     
@@ -179,6 +188,15 @@
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>http://ronrichardson.netlify.com/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualization</title>
+      <link>http://ronrichardson.netlify.com/tags/visualization/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://ronrichardson.netlify.com/tags/visualization/</guid>
       <description></description>
     </item>
     

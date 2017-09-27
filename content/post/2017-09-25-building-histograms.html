@@ -1,0 +1,35 @@
+---
+title: Building Histograms
+author: Ron Richardson
+date: '2017-09-25'
+slug: building-histograms
+categories:
+  - R
+tags:
+  - charts
+  - visualization
+---
+
+
+
+<p>Another great way to visualize data is by using a histogram. A histogram is very simple to do.</p>
+<pre class="r"><code>library(Lahman)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+df&lt;-Master %&gt;%
+  filter(!is.na(weight)) %&gt;%
+  select(weight)
+
+ggplot()+
+  geom_histogram(data=df,aes(x=weight), color=&quot;white&quot;, fill=&quot;blue&quot;, bins=25) + 
+  ggtitle(&quot;Baseball player weights&quot;)</code></pre>
+<p><img src="/post/2017-09-25-building-histograms_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>

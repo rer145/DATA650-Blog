@@ -8,10 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
-    <meta property="og:url" content="http://ronrichardson.netlify.com/post/test-post/">
+    <meta property="og:url" content="http://ronrichardson.netlify.com/post/building-histograms/">
 
-    <title>Test Post - Minimal</title>
-    <meta property="og:title" content="Test Post - Minimal">
+    <title>Building Histograms - Minimal</title>
+    <meta property="og:title" content="Building Histograms - Minimal">
     <meta property="og:type" content="article">
     <meta name="description" content="">
 
@@ -32,11 +32,12 @@
 
   <article class="post">
     <header class="post-header">
-      <h1 class="post-title">Test Post</h1>
+      <h1 class="post-title">Building Histograms</h1>
       <time class="post-date" datetime="2017-09-25 00:00:00 UTC">25 Sep 2017</time>
     </header>
 
-    <pre class="r"><code>library(Lahman)
+    <p>Another great way to visualize data is by using a histogram. A histogram is very simple to do.</p>
+<pre class="r"><code>library(Lahman)
 library(dplyr)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
@@ -46,46 +47,16 @@ library(dplyr)</code></pre>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>Batting %&gt;%
-  select(playerID, HR) %&gt;%
-  filter(HR &gt; 50)</code></pre>
-<pre><code>##     playerID HR
-## 1   ruthba01 54
-## 2   ruthba01 59
-## 3   ruthba01 60
-## 4   ruthba01 54
-## 5  wilsoha01 56
-## 6   foxxji01 58
-## 7  greenha01 58
-## 8  kinerra01 51
-## 9   mizejo01 51
-## 10 kinerra01 54
-## 11  mayswi01 51
-## 12 mantlmi01 52
-## 13 mantlmi01 54
-## 14 marisro01 61
-## 15  mayswi01 52
-## 16 fostege01 52
-## 17 fieldce01 51
-## 18 mcgwima01 52
-## 19 griffke02 56
-## 20 griffke02 56
-## 21 mcgwima01 70
-## 22  sosasa01 66
-## 23 mcgwima01 65
-## 24  sosasa01 63
-## 25 bondsba01 73
-## 26 gonzalu01 57
-## 27 rodrial01 52
-## 28  sosasa01 64
-## 29 rodrial01 57
-## 30 thomeji01 52
-## 31 jonesan01 51
-## 32 howarry01 58
-## 33 ortizda01 54
-## 34 rodrial01 54
-## 35 bautijo02 54
-## 36 davisch02 53</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+df&lt;-Master %&gt;%
+  filter(!is.na(weight)) %&gt;%
+  select(weight)
+
+ggplot()+
+  geom_histogram(data=df,aes(x=weight), color=&quot;white&quot;, fill=&quot;blue&quot;, bins=25) + 
+  ggtitle(&quot;Baseball player weights&quot;)</code></pre>
+<p><img src="/post/2017-09-25-building-histograms_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 
 
   </article>

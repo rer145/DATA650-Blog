@@ -48,6 +48,16 @@
     </item>
     
     <item>
+      <title>Building Histograms</title>
+      <link>http://ronrichardson.netlify.com/post/building-histograms/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://ronrichardson.netlify.com/post/building-histograms/</guid>
+      <description>Another great way to visualize data is by using a histogram. A histogram is very simple to do.
+library(Lahman)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)df&amp;lt;-Master %&amp;gt;%filter(!is.na(weight)) %&amp;gt;%select(weight)ggplot()+geom_histogram(data=df,aes(x=weight), color=&amp;quot;white&amp;quot;, fill=&amp;quot;blue&amp;quot;, bins=25) + ggtitle(&amp;quot;Baseball player weights&amp;quot;)</description>
+    </item>
+    
+    <item>
       <title>Test Post</title>
       <link>http://ronrichardson.netlify.com/post/test-post/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>

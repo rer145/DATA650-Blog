@@ -1,13 +1,15 @@
 baseURL = "http://ronrichardson.netlify.com/"
 languageCode = "en-us"
 title = "Minimal"
-theme = "minimal"
+theme = "hugo-journal"
 #disqusShortname = "username" # delete this to disable disqus comments
 
 [params]
     author = "Ron Richardson"
     description = "RStudio Blog for DATA 650 at Mercyhurst University"
+    tagline = "RStudio Blog for DATA 650 at Mercyhurst University"
     githubUsername = "rer145"
+    twitterUsername = "your_twitter_handle"
     accent = "blue"
     showBorder = true
     backgroundColor = "white"
@@ -15,6 +17,11 @@ theme = "minimal"
     highlight = true
     highlightStyle = "solarized-dark"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+
+[params.work]
+  jobTitle = "Grad Student"
+  company = "Mercyhurst University"
+  companyUrl = "https://www.mercyhurst.edu/"
 
 [[menu.main]]
     url = "/"

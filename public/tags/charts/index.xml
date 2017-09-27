@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on Minimal</title>
-    <link>http://ronrichardson.netlify.com/categories/r/</link>
-    <description>Recent content in R on Minimal</description>
+    <title>Charts on Minimal</title>
+    <link>http://ronrichardson.netlify.com/tags/charts/</link>
+    <description>Recent content in Charts on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://ronrichardson.netlify.com/categories/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://ronrichardson.netlify.com/tags/charts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>http://ronrichardson.netlify.com/post/building-histograms/</guid>
       <description>Another great way to visualize data is by using a histogram. A histogram is very simple to do.
 library(Lahman)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)df&amp;lt;-Master %&amp;gt;%filter(!is.na(weight)) %&amp;gt;%select(weight)ggplot()+geom_histogram(data=df,aes(x=weight), color=&amp;quot;white&amp;quot;, fill=&amp;quot;blue&amp;quot;, bins=25) + ggtitle(&amp;quot;Baseball player weights&amp;quot;)</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>http://ronrichardson.netlify.com/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>http://ronrichardson.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
   </channel>
