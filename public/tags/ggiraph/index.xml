@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ggiraph on DATA 650 Blog - Ron Richardson</title>
+    <link>http://ronrichardson.netlify.com/tags/ggiraph/</link>
+    <description>Recent content in Ggiraph on DATA 650 Blog - Ron Richardson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://ronrichardson.netlify.com/tags/ggiraph/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using ggplot - Interactive Bar Plots</title>
+      <link>http://ronrichardson.netlify.com/post/using-ggplot-interactive-bar-plots/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://ronrichardson.netlify.com/post/using-ggplot-interactive-bar-plots/</guid>
+      <description>IntroductionSometimes, just having a chart isn’t enough. When working on the web, interactivity is key to capturing a user’s interest and attention. One simple way of doing so, is by adding a tooltip or hover effect to the data points. Not only is this great for the user’s attention, it helps with the readability of the data as well.
+Basic ExampleWe are introducing a new library called ggiraph.</description>
+    </item>
+    
+    <item>
+      <title>Using ggplot - Time Series</title>
+      <link>http://ronrichardson.netlify.com/post/using-ggplot-time-series/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://ronrichardson.netlify.com/post/using-ggplot-time-series/</guid>
+      <description>IntroductionA new chart to introduce is called a time series. This type is used when you want to visualize data along a period of time. The x-axis represents the time and the y-axis represents the data. This is a subset of the line graph, as a line graph doesn’t have a precondition of the x-axis representing time.
+Basic ExampleFor this example we will use the number of home runs that Babe Ruth during his career.</description>
+    </item>
+    
+  </channel>
+</rss>

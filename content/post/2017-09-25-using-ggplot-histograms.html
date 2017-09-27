@@ -1,0 +1,37 @@
+---
+title: Using ggplot - Histograms
+author: Ron Richardson
+date: '2017-09-25'
+slug: using-ggplot-histograms
+categories:
+  - DATA 650
+  - R
+tags:
+  - charts
+  - visualization
+---
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>A histogram uses rectangular bars to represent data that is grouped into a series, sized accordingly based on the numerical value associated with it. The rectangular bars can be displayed either vertically or horizontally.</p>
+</div>
+<div id="basic-example" class="section level2">
+<h2>Basic Example</h2>
+<p>First, we must gather our data. Here we are using the Lahman database and obtaining all of the weights of baseball players throughout the years.</p>
+<pre class="r"><code>#import libraries
+library(Lahman)
+library(dplyr)
+library(ggplot2)
+
+#store data into a variable named df
+df&lt;-Master %&gt;%
+  filter(!is.na(weight)) %&gt;%
+  select(weight)</code></pre>
+<p>To display the chart, we use the ggplot library. The ‘data’ parameter is the data source, and ‘aes’ refers to the aesthetics.</p>
+<pre class="r"><code>ggplot()+
+  geom_histogram(data=df,aes(x=weight), color=&quot;white&quot;, fill=&quot;blue&quot;, bins=25)+ 
+  ggtitle(&quot;Baseball player weights&quot;)</code></pre>
+<p><img src="/post/2017-09-25-using-ggplot-histograms_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>

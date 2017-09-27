@@ -1,0 +1,51 @@
+---
+title: Using ggplot - Interactive Bar Plots
+author: Ron Richardson
+date: '2017-09-27'
+slug: using-ggplot-interactive-bar-plots
+categories:
+  - DATA 650
+  - R
+tags:
+  - charts
+  - visualization
+  - ggiraph
+---
+
+## Introduction
+
+Sometimes, just having a chart isn't enough. When working on the web, interactivity is key to capturing a user's interest and attention.  One simple way of doing so, is by adding a tooltip or hover effect to the data points.  Not only is this great for the user's attention, it helps with the readability of the data as well.
+
+## Basic Example
+
+We are introducing a new library called ggiraph. This adds the interactive versions of the ggplot charts.  All charts are suffixed with '_interactive'.
+
+One thing to note is the addition of 'tooltip-HR,data_id=name' to the aes(). This lets ggiraph know that HR is the value to display, and the unique value that the series is grouped by is name. 
+
+```{r message=FALSE, warning=FALSE}
+#import libraries
+library(Lahman)
+library(dplyr)
+library(ggplot2)
+library(ggiraph)
+
+#store data into a variable named df
+df<-Teams %>%
+  filter(yearID == 1980) %>%
+  select(name, HR) %>%
+  arrange(HR)
+
+#update field to be a factor, not chr
+df$name<-factor(df$name, levels=df$name)
+
+#Store the plot into a variable
+g<-ggplot()+
+  geom_bar_interactive(data=df,aes(x=name,y=HR,tooltip=HR,data_id=name), stat="identity", color="blue", fill="white")+
+  ggtitle("HR by team in 1980 with ggiraph")+
+  coord_flip()+
+  ylab("Homeruns")+
+  xlab("Team")
+
+#display graph using ggiraph
+ggiraph(code=print(g),hover_css="fill:blue; stroke:white")
+```

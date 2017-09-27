@@ -1,0 +1,153 @@
+---
+title: Lahman database using dplyr
+author: Ron Richardson
+date: '2017-09-06'
+slug: lahman-database-using-dplyr
+categories:
+  - R
+  - DATA 650
+tags:
+  - visualization
+  - charts
+---
+
+## Introduction
+
+The Lahman database is a publically accessible database of baseball statistics. This database contains multiple tables of data from a large time series, which makes it great to run experiments against.
+
+dplyr is an R package which allows programmatic access to this data using concepts very similar to T-SQL.
+
+## Initializations
+
+Once the packages are installed, they need to be loaded into the environemnt. This is accomplished with two lines of code.
+
+```{r message=FALSE, warning=FALSE}
+library(Lahman)
+library(dplyr)
+```
+
+
+## Filtering Columns and Rows
+
+Now to find any New York Yankee with over 50 home runs from any year, run the following:
+
+```{r}
+Batting %>% 
+  select(playerID, yearID, teamID, HR) %>%
+  filter(teamID == 'NYA' & HR > 50) %>%
+  arrange(desc(HR))
+```
+
+
+## Examples from 09/06/2017 Class
+
+The first example asks for only players of the New York Yankees that have hit 40 HR or more. I've added code to order the results from most HR to lowest to get a quick view of the biggest HR hitters.
+
+```{r}
+Batting %>%
+  select(yearID, teamID, playerID, HR) %>%
+  filter(teamID == 'NYA' & HR >= 40) %>%
+  arrange(desc(HR))
+```
+
+Next up, we want to see if these big HR hitters can do so without striking out so much. Ordering by the lest amount of strikouts to most helps us figure out the best HR to SO ratio.
+
+```{r}
+Batting %>%
+  select(yearID, teamID, playerID, HR, SO) %>%
+  filter(HR > 40 & SO < 60) %>%
+  arrange(SO)
+```
+
+
+Switching teams now to the Philadelpia Phillies, we want to only look at players in the 1970s that have hit more than 30 HR. There are two ways of filtering the yearID field, and both are shown below.  Only the first filtering method was discussed in class.
+
+```{r}
+Batting %>%
+  select(yearID, teamID, playerID, HR) %>%
+  filter(teamID == 'PHI' & yearID >= 1970 & yearID <= 1979 & HR > 30) %>%
+  arrange(desc(HR))
+```
+
+
+Having to enter multiple conditions in the filter function can become tedious and hard to read. What we can do is use the 'between' function to make the code a bit clearer. The 'between' function takes the field and the first and last values in the range and filters the results.
+
+```{r}
+Batting %>%
+  select(yearID, teamID, playerID, HR) %>%
+  filter(teamID == 'PHI' & between(yearID, 1970, 1979) & HR > 30) %>%
+  arrange(desc(HR))
+```
+
+
+Now we want to start ordering our results into a more sensible method. We use the 'arrange' function for this. The desc() function orders values from highest to lowest.
+
+```{r}
+Batting %>%
+  select(yearID, teamID, playerID, HR) %>%
+  filter(HR > 50) %>%
+  arrange(desc(HR))
+```
+
+
+A more complex example will find players that have at least 400 at-bats (AB), but very few strikeouts (SO less than 10). Here we can order the results by multiple columns. The first column (SO) is ordered lowest to highest, and the second column (desc(AB)) orders the values from highest to lowest.  This allows us to view the least amount of strikouts with the most at-bats (in case of ties with SO).
+
+```{r}
+Batting %>%
+  select(yearID, teamID, playerID, AB, SO) %>%
+  filter(AB >= 400 & SO < 10) %>%
+  arrange(SO, desc(AB))
+```
+
+
+## Grouping and aggregating data
+
+A simple grouping of data can be done by using the group_by function. Below is an example of getting the best HR hitters with their career HR totals. Note that using the select function is not required, since it will pull the columns being used (the one being grouped and the one that is grouped by).
+
+The summarize() function tells dplyr what to do with the grouping.  Other functions are available when grouping data as well.
+
+```{r}
+#Find the career HR totals for all players, limited to players with career total of 600 or more
+# order from highest to lowest
+Batting %>%
+  group_by(playerID) %>%
+  summarize(career_HR = sum(HR)) %>%
+  filter(career_HR >= 600) %>%
+  arrange(desc(career_HR))
+```
+
+Another way to aggregate data is to take the average.  Here we take the average season HR totals for players. The mean() function is used to calculate the average of the values.
+
+```{r}
+#What players have the highest average per season HR totals?
+Batting %>%
+  group_by(playerID) %>%
+  summarize(season_avg = mean(HR)) %>%
+  filter(season_avg >= 30) %>%
+  arrange(desc(season_avg))
+```
+
+Additionally you can add multiple aggreated values as new columns. Here we find the top players for HR season, along with their lowest and highest season totals
+
+```{r}
+#multiple column groupings
+Batting %>%
+  group_by(playerID) %>%
+  summarize(season_avg = mean(HR), min_HR = min(HR), max_HR = max(HR)) %>%
+  filter(season_avg >= 30) %>%
+  arrange(desc(season_avg))
+```
+
+
+In some cases, it's important to filter out data you don't want first, before you do any grouping and aggregating.  In this example, we want players that hit over 50 HR in a season (listed only once), but only from 1970 and later.  Here we only want to show the player's name and not the HR total.
+
+```{r}
+#What players from 1970 to today have hit more than 50 HR at least once? Don't list a player more than once.
+Batting %>%
+  filter(yearID >= 1970) %>%
+  group_by(playerID) %>%
+  summarize(season_hr = max(HR)) %>%
+  filter(season_hr > 50) %>%
+  arrange(desc(season_hr)) %>%
+  select(playerID)
+```

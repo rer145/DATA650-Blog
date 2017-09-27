@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.28" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta property="og:url" content="http://ronrichardson.netlify.com/post/using-ggplot-bar-plots/">
+
+    <title>Using ggplot - Bar Plots - DATA 650 Blog - Ron Richardson</title>
+    <meta property="og:title" content="Using ggplot - Bar Plots - DATA 650 Blog - Ron Richardson">
+    <meta property="og:type" content="article">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/journal.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="DATA 650 Blog - Ron Richardson">
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <nav class="site-nav">
+        <a href="http://ronrichardson.netlify.com/">Index</a>
+      </nav>
+
+
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Using ggplot - Bar Plots</h1>
+      <time class="post-date" datetime="2017-09-25 00:00:00 UTC">25 Sep 2017</time>
+    </header>
+
+    <div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>A bar plot uses rectangular bars (like a histogram) to represent data that is grouped into a series, sized accordingly based on the numerical value associated with it. The rectangular bars can be displayed either vertically or horizontally.</p>
+</div>
+<div id="basic-example" class="section level2">
+<h2>Basic Example</h2>
+<p>First, we must gather our data. For this example, we will gather the number of home runs a team hit in 1980. For this purpose, we are ordering the results by the number of home runs hit.</p>
+<pre class="r"><code>#import libraries
+library(Lahman)
+library(dplyr)
+library(ggplot2)
+
+#store data into a variable named df
+df&lt;-Teams %&gt;%
+  filter(yearID==1980) %&gt;%
+  select(name, HR) %&gt;%
+  arrange(HR)</code></pre>
+<p>Using ggplot, we’ll display the data with a simple bar plot. By using stat=“identity”, we are telling ggplot NOT to tally up the data. We have already performed that math in our original query.</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=df, aes(x=name,y=HR),stat=&quot;identity&quot;, color=&quot;green&quot;, fill=&quot;white&quot;)+
+  ggtitle(&quot;HR by team in 1980&quot;)</code></pre>
+<p><img src="/post/2017-09-25-using-ggplot-bar-plots_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Now, in the x-axis, the names of the teams are very hard to read, so let’s flip the coordinates, so that we can read them better, by using coord_flip().</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=df, aes(x=name,y=HR),stat=&quot;identity&quot;, color=&quot;green&quot;, fill=&quot;white&quot;)+
+  ggtitle(&quot;HR by team in 1980&quot;)+
+  coord_flip()</code></pre>
+<p><img src="/post/2017-09-25-using-ggplot-bar-plots_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Here you will see that the data isn’t ordered the same as our original query. To make this chart easier for the user to visualize, we want the bars to match what we have in our query. To do this, we must change the data type of the ‘name’ field. Simply changing the type to a factor isn’t enough. We need to set the levels to match what was in our original query.</p>
+<pre class="r"><code>str(df$name)  # this will show us the current data type of the column (e.g. &quot;chr&quot;)</code></pre>
+<pre><code>##  chr [1:26] &quot;New York Mets&quot; &quot;San Diego Padres&quot; &quot;Houston Astros&quot; ...</code></pre>
+<pre class="r"><code>#change this to a factor and save it back to the dataset.
+df$name&lt;-factor(df$name,levels=df$name)</code></pre>
+<p>Now we can see our new chart in a better order.</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=df, aes(x=name,y=HR),stat=&quot;identity&quot;, color=&quot;green&quot;, fill=&quot;white&quot;)+
+  ggtitle(&quot;HR by team in 1980&quot;)+
+  coord_flip()</code></pre>
+<p><img src="/post/2017-09-25-using-ggplot-bar-plots_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+
+
+  </article>
+
+
+      <footer class="site-footer">
+        <span itemscope itemtype="http://schema.org/Person">
+          <link itemprop="url" href="http://ronrichardson.netlify.com/">
+          <span itemprop="name"></span>
+
+          ,
+          <span itemprop="jobTitle">Grad Student</span> at
+          <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization"><a itemprop="url" href="https://www.mercyhurst.edu/"><span itemprop="name">Mercyhurst University</span></a></span><br>
+
+          <a itemprop="sameAs" href="https://github.com/rer145" title="GitHub">GH</a>
+
+          <a itemprop="sameAs" href="https://twitter.com/rer145" title="Twitter">TW</a>
+
+          
+        </span>
+
+        
+      </footer>
+    </div>
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
+

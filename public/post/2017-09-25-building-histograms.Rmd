@@ -12,7 +12,7 @@ tags:
 
 Another great way to visualize data is by using a histogram.  A histogram is very simple to do.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(Lahman)
 library(dplyr)
 library(ggplot2)

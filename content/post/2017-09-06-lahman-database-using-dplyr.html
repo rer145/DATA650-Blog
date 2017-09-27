@@ -1,0 +1,354 @@
+---
+title: Lahman database using dplyr
+author: Ron Richardson
+date: '2017-09-06'
+slug: lahman-database-using-dplyr
+categories:
+  - R
+  - DATA 650
+tags:
+  - visualization
+  - charts
+---
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>The Lahman database is a publically accessible database of baseball statistics. This database contains multiple tables of data from a large time series, which makes it great to run experiments against.</p>
+<p>dplyr is an R package which allows programmatic access to this data using concepts very similar to T-SQL.</p>
+</div>
+<div id="initializations" class="section level2">
+<h2>Initializations</h2>
+<p>Once the packages are installed, they need to be loaded into the environemnt. This is accomplished with two lines of code.</p>
+<pre class="r"><code>library(Lahman)
+library(dplyr)</code></pre>
+</div>
+<div id="filtering-columns-and-rows" class="section level2">
+<h2>Filtering Columns and Rows</h2>
+<p>Now to find any New York Yankee with over 50 home runs from any year, run the following:</p>
+<pre class="r"><code>Batting %&gt;% 
+  select(playerID, yearID, teamID, HR) %&gt;%
+  filter(teamID == &#39;NYA&#39; &amp; HR &gt; 50) %&gt;%
+  arrange(desc(HR))</code></pre>
+<pre><code>##    playerID yearID teamID HR
+## 1 marisro01   1961    NYA 61
+## 2  ruthba01   1927    NYA 60
+## 3  ruthba01   1921    NYA 59
+## 4  ruthba01   1920    NYA 54
+## 5  ruthba01   1928    NYA 54
+## 6 mantlmi01   1961    NYA 54
+## 7 rodrial01   2007    NYA 54
+## 8 mantlmi01   1956    NYA 52</code></pre>
+</div>
+<div id="examples-from-09062017-class" class="section level2">
+<h2>Examples from 09/06/2017 Class</h2>
+<p>The first example asks for only players of the New York Yankees that have hit 40 HR or more. I’ve added code to order the results from most HR to lowest to get a quick view of the biggest HR hitters.</p>
+<pre class="r"><code>Batting %&gt;%
+  select(yearID, teamID, playerID, HR) %&gt;%
+  filter(teamID == &#39;NYA&#39; &amp; HR &gt;= 40) %&gt;%
+  arrange(desc(HR))</code></pre>
+<pre><code>##    yearID teamID  playerID HR
+## 1    1961    NYA marisro01 61
+## 2    1927    NYA  ruthba01 60
+## 3    1921    NYA  ruthba01 59
+## 4    1920    NYA  ruthba01 54
+## 5    1928    NYA  ruthba01 54
+## 6    1961    NYA mantlmi01 54
+## 7    2007    NYA rodrial01 54
+## 8    1956    NYA mantlmi01 52
+## 9    1930    NYA  ruthba01 49
+## 10   1934    NYA gehrilo01 49
+## 11   1936    NYA gehrilo01 49
+## 12   2005    NYA rodrial01 48
+## 13   1926    NYA  ruthba01 47
+## 14   1927    NYA gehrilo01 47
+## 15   1924    NYA  ruthba01 46
+## 16   1929    NYA  ruthba01 46
+## 17   1931    NYA gehrilo01 46
+## 18   1931    NYA  ruthba01 46
+## 19   1937    NYA dimagjo01 46
+## 20   1997    NYA martiti02 44
+## 21   2012    NYA grandcu01 43
+## 22   1958    NYA mantlmi01 42
+## 23   1923    NYA  ruthba01 41
+## 24   1930    NYA gehrilo01 41
+## 25   1932    NYA  ruthba01 41
+## 26   1980    NYA jacksre01 41
+## 27   2002    NYA giambja01 41
+## 28   2003    NYA giambja01 41
+## 29   2011    NYA grandcu01 41
+## 30   1960    NYA mantlmi01 40</code></pre>
+<p>Next up, we want to see if these big HR hitters can do so without striking out so much. Ordering by the lest amount of strikouts to most helps us figure out the best HR to SO ratio.</p>
+<pre class="r"><code>Batting %&gt;%
+  select(yearID, teamID, playerID, HR, SO) %&gt;%
+  filter(HR &gt; 40 &amp; SO &lt; 60) %&gt;%
+  arrange(SO)</code></pre>
+<pre><code>##    yearID teamID  playerID HR SO
+## 1    1934    NYA gehrilo01 49 31
+## 2    1954    CIN kluszte01 49 35
+## 3    1937    NYA dimagjo01 46 37
+## 4    1929    NY1   ottme01 42 38
+## 5    1955    CIN kluszte01 47 40
+## 6    2004    SFN bondsba01 45 41
+## 7    1947    NY1  mizejo01 51 42
+## 8    1936    NYA gehrilo01 49 46
+## 9    1969    ATL aaronha01 44 47
+## 10   2002    SFN bondsba01 46 47
+## 11   1949    BOS willite01 43 48
+## 12   1953    CLE rosenal01 43 48
+## 13   1940    SLN  mizejo01 43 49
+## 14   1922    SLN hornsro01 42 50
+## 15   2006    SLN pujolal01 49 50
+## 16   1931    NYA  ruthba01 46 51
+## 17   2004    SLN pujolal01 46 52
+## 18   1993    CHA thomafr04 41 54
+## 19   1957    WS1 sievero01 42 55
+## 20   1931    NYA gehrilo01 46 56
+## 21   1923    PHI willicy01 41 57
+## 22   1951    PIT kinerra01 42 57
+## 23   1954    NY1  mayswi01 41 57
+## 24   1936    CLE troskha01 42 58
+## 25   1953    BRO camparo01 41 58
+## 26   1957    ML1 aaronha01 44 58
+## 27   1971    ATL aaronha01 47 58
+## 28   2003    SFN bondsba01 45 58</code></pre>
+<p>Switching teams now to the Philadelpia Phillies, we want to only look at players in the 1970s that have hit more than 30 HR. There are two ways of filtering the yearID field, and both are shown below. Only the first filtering method was discussed in class.</p>
+<pre class="r"><code>Batting %&gt;%
+  select(yearID, teamID, playerID, HR) %&gt;%
+  filter(teamID == &#39;PHI&#39; &amp; yearID &gt;= 1970 &amp; yearID &lt;= 1979 &amp; HR &gt; 30) %&gt;%
+  arrange(desc(HR))</code></pre>
+<pre><code>##   yearID teamID  playerID HR
+## 1   1979    PHI schmimi01 45
+## 2   1977    PHI luzingr01 39
+## 3   1975    PHI schmimi01 38
+## 4   1976    PHI schmimi01 38
+## 5   1977    PHI schmimi01 38
+## 6   1974    PHI schmimi01 36
+## 7   1978    PHI luzingr01 35
+## 8   1971    PHI johnsde01 34
+## 9   1975    PHI luzingr01 34</code></pre>
+<p>Having to enter multiple conditions in the filter function can become tedious and hard to read. What we can do is use the ‘between’ function to make the code a bit clearer. The ‘between’ function takes the field and the first and last values in the range and filters the results.</p>
+<pre class="r"><code>Batting %&gt;%
+  select(yearID, teamID, playerID, HR) %&gt;%
+  filter(teamID == &#39;PHI&#39; &amp; between(yearID, 1970, 1979) &amp; HR &gt; 30) %&gt;%
+  arrange(desc(HR))</code></pre>
+<pre><code>##   yearID teamID  playerID HR
+## 1   1979    PHI schmimi01 45
+## 2   1977    PHI luzingr01 39
+## 3   1975    PHI schmimi01 38
+## 4   1976    PHI schmimi01 38
+## 5   1977    PHI schmimi01 38
+## 6   1974    PHI schmimi01 36
+## 7   1978    PHI luzingr01 35
+## 8   1971    PHI johnsde01 34
+## 9   1975    PHI luzingr01 34</code></pre>
+<p>Now we want to start ordering our results into a more sensible method. We use the ‘arrange’ function for this. The desc() function orders values from highest to lowest.</p>
+<pre class="r"><code>Batting %&gt;%
+  select(yearID, teamID, playerID, HR) %&gt;%
+  filter(HR &gt; 50) %&gt;%
+  arrange(desc(HR))</code></pre>
+<pre><code>##    yearID teamID  playerID HR
+## 1    2001    SFN bondsba01 73
+## 2    1998    SLN mcgwima01 70
+## 3    1998    CHN  sosasa01 66
+## 4    1999    SLN mcgwima01 65
+## 5    2001    CHN  sosasa01 64
+## 6    1999    CHN  sosasa01 63
+## 7    1961    NYA marisro01 61
+## 8    1927    NYA  ruthba01 60
+## 9    1921    NYA  ruthba01 59
+## 10   1932    PHA  foxxji01 58
+## 11   1938    DET greenha01 58
+## 12   2006    PHI howarry01 58
+## 13   2001    ARI gonzalu01 57
+## 14   2002    TEX rodrial01 57
+## 15   1930    CHN wilsoha01 56
+## 16   1997    SEA griffke02 56
+## 17   1998    SEA griffke02 56
+## 18   1920    NYA  ruthba01 54
+## 19   1928    NYA  ruthba01 54
+## 20   1949    PIT kinerra01 54
+## 21   1961    NYA mantlmi01 54
+## 22   2006    BOS ortizda01 54
+## 23   2007    NYA rodrial01 54
+## 24   2010    TOR bautijo02 54
+## 25   2013    BAL davisch02 53
+## 26   1956    NYA mantlmi01 52
+## 27   1965    SFN  mayswi01 52
+## 28   1977    CIN fostege01 52
+## 29   1996    OAK mcgwima01 52
+## 30   2001    TEX rodrial01 52
+## 31   2002    CLE thomeji01 52
+## 32   1947    PIT kinerra01 51
+## 33   1947    NY1  mizejo01 51
+## 34   1955    NY1  mayswi01 51
+## 35   1990    DET fieldce01 51
+## 36   2005    ATL jonesan01 51</code></pre>
+<p>A more complex example will find players that have at least 400 at-bats (AB), but very few strikeouts (SO less than 10). Here we can order the results by multiple columns. The first column (SO) is ordered lowest to highest, and the second column (desc(AB)) orders the values from highest to lowest. This allows us to view the least amount of strikouts with the most at-bats (in case of ties with SO).</p>
+<pre class="r"><code>Batting %&gt;%
+  select(yearID, teamID, playerID, AB, SO) %&gt;%
+  filter(AB &gt;= 400 &amp; SO &lt; 10) %&gt;%
+  arrange(SO, desc(AB))</code></pre>
+<pre><code>##    yearID teamID  playerID  AB SO
+## 1    1932    NYA seweljo01 503  3
+## 2    1894    NY1 doyleja01 422  3
+## 3    1925    CLE seweljo01 608  4
+## 4    1929    CLE seweljo01 578  4
+## 5    1933    NYA seweljo01 524  4
+## 6    1922    CHN holloch01 592  5
+## 7    1893    NY1  wardjo01 588  5
+## 8    1922    CLE mcinnst01 537  5
+## 9    1936    PIT wanerll01 414  5
+## 10   1894    BLN keelewi01 590  6
+## 11   1924    BSN mcinnst01 581  6
+## 12   1926    CLE seweljo01 578  6
+## 13   1895    SLN quinnjo02 543  6
+## 14   1894    NY1  wardjo01 540  6
+## 15   1889    BSN broutda01 485  6
+## 16   1875    BS1 wrighge01 408  6
+## 17   1927    CLE seweljo01 569  7
+## 18   1893    SLN quinnjo02 547  7
+## 19   1929    PIT traynpi01 540  7
+## 20   1894    PHI crossla01 529  7
+## 21   1889    NY1  wardjo01 479  7
+## 22   1956    NY1 muelldo01 453  7
+## 23   1896    CIN vaughfa01 433  7
+## 24   1927    PHA cochrmi01 432  7
+## 25   1893    PHI crossla01 415  7
+## 26   1894    BLN brodist01 573  8
+## 27   1947    PHI verbaem01 540  8
+## 28   1895    PHI crossla01 535  8
+## 29   1927    WS1 speaktr01 523  8
+## 30   1929    PHA cochrmi01 514  8
+## 31   1890    NY1 glassja01 512  8
+## 32   1923    CHA collied01 505  8
+## 33   1933    PIT wanerll01 500  8
+## 34   1893    PIT donovpa01 499  8
+## 35   1931    NYA seweljo01 484  8
+## 36   1887    IN3 glassja01 483  8
+## 37   1895    PIT bierblo01 466  8
+## 38   1893    CHN dungasa01 465  8
+## 39   1885    NY1 connoro01 455  8
+## 40   1893    LS3 pinknge01 446  8
+## 41   1895    CIN   hoydu01 429  8
+## 42   1925    CHA collied01 425  8
+## 43   1921    CIN roushed01 418  8
+## 44   1894    SLN quinnjo02 405  8
+## 45   1945    BSN holmeto01 636  9
+## 46   1929    WS1  ricesa01 616  9
+## 47   1928    CLE seweljo01 588  9
+## 48   1921    BOS mcinnst01 584  9
+## 49   1926    CLE summaho01 581  9
+## 50   1896    CL4 mckeaed01 571  9
+## 51   1893    WAS   hoydu01 564  9
+## 52   1948    CLE boudrlo01 560  9
+## 53   1896    BLN keelewi01 544  9
+## 54   1894    PIT bierblo01 525  9
+## 55   1894    BLN broutda01 525  9
+## 56   1931    NY1 leachfr01 515  9
+## 57   1952    CLE mitchda01 511  9
+## 58   1887    DTN broutda01 500  9
+## 59   1894    SLN milledo01 481  9
+## 60   1926    BSN  highan01 476  9
+## 61   1921    SLA severha01 472  9
+## 62   1918    CLE speaktr01 471  9
+## 63   1921    CHN  dealch01 422  9
+## 64   1945    PHA busched01 416  9
+## 65   1883    CHN ansonca01 413  9</code></pre>
+</div>
+<div id="grouping-and-aggregating-data" class="section level2">
+<h2>Grouping and aggregating data</h2>
+<p>A simple grouping of data can be done by using the group_by function. Below is an example of getting the best HR hitters with their career HR totals. Note that using the select function is not required, since it will pull the columns being used (the one being grouped and the one that is grouped by).</p>
+<p>The summarize() function tells dplyr what to do with the grouping. Other functions are available when grouping data as well.</p>
+<pre class="r"><code>#Find the career HR totals for all players, limited to players with career total of 600 or more
+# order from highest to lowest
+Batting %&gt;%
+  group_by(playerID) %&gt;%
+  summarize(career_HR = sum(HR)) %&gt;%
+  filter(career_HR &gt;= 600) %&gt;%
+  arrange(desc(career_HR))</code></pre>
+<pre><code>## # A tibble: 8 x 2
+##    playerID career_HR
+##       &lt;chr&gt;     &lt;int&gt;
+## 1 bondsba01       762
+## 2 aaronha01       755
+## 3  ruthba01       714
+## 4 rodrial01       696
+## 5  mayswi01       660
+## 6 griffke02       630
+## 7 thomeji01       612
+## 8  sosasa01       609</code></pre>
+<p>Another way to aggregate data is to take the average. Here we take the average season HR totals for players. The mean() function is used to calculate the average of the values.</p>
+<pre class="r"><code>#What players have the highest average per season HR totals?
+Batting %&gt;%
+  group_by(playerID) %&gt;%
+  summarize(season_avg = mean(HR)) %&gt;%
+  filter(season_avg &gt;= 30) %&gt;%
+  arrange(desc(season_avg))</code></pre>
+<pre><code>## # A tibble: 13 x 2
+##     playerID season_avg
+##        &lt;chr&gt;      &lt;dbl&gt;
+##  1 pujolal01   36.93750
+##  2 bondsba01   34.63636
+##  3 mcgwima01   34.29412
+##  4 kinerra01   33.54545
+##  5 aaronha01   32.82609
+##  6 bryankr01   32.50000
+##  7  ruthba01   32.45455
+##  8  sosasa01   32.05263
+##  9 cabremi01   31.85714
+## 10 belleal01   31.75000
+## 11 rodrial01   31.63636
+## 12 schmimi01   30.44444
+## 13 abreujo02   30.33333</code></pre>
+<p>Additionally you can add multiple aggreated values as new columns. Here we find the top players for HR season, along with their lowest and highest season totals</p>
+<pre class="r"><code>#multiple column groupings
+Batting %&gt;%
+  group_by(playerID) %&gt;%
+  summarize(season_avg = mean(HR), min_HR = min(HR), max_HR = max(HR)) %&gt;%
+  filter(season_avg &gt;= 30) %&gt;%
+  arrange(desc(season_avg))</code></pre>
+<pre><code>## # A tibble: 13 x 4
+##     playerID season_avg min_HR max_HR
+##        &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 pujolal01   36.93750     17     49
+##  2 bondsba01   34.63636      5     73
+##  3 mcgwima01   34.29412      3     70
+##  4 kinerra01   33.54545      7     54
+##  5 aaronha01   32.82609     10     47
+##  6 bryankr01   32.50000     26     39
+##  7  ruthba01   32.45455      0     60
+##  8  sosasa01   32.05263      1     66
+##  9 cabremi01   31.85714     12     44
+## 10 belleal01   31.75000      1     50
+## 11 rodrial01   31.63636      0     57
+## 12 schmimi01   30.44444      1     48
+## 13 abreujo02   30.33333     25     36</code></pre>
+<p>In some cases, it’s important to filter out data you don’t want first, before you do any grouping and aggregating. In this example, we want players that hit over 50 HR in a season (listed only once), but only from 1970 and later. Here we only want to show the player’s name and not the HR total.</p>
+<pre class="r"><code>#What players from 1970 to today have hit more than 50 HR at least once? Don&#39;t list a player more than once.
+Batting %&gt;%
+  filter(yearID &gt;= 1970) %&gt;%
+  group_by(playerID) %&gt;%
+  summarize(season_hr = max(HR)) %&gt;%
+  filter(season_hr &gt; 50) %&gt;%
+  arrange(desc(season_hr)) %&gt;%
+  select(playerID)</code></pre>
+<pre><code>## # A tibble: 14 x 1
+##     playerID
+##        &lt;chr&gt;
+##  1 bondsba01
+##  2 mcgwima01
+##  3  sosasa01
+##  4 howarry01
+##  5 gonzalu01
+##  6 rodrial01
+##  7 griffke02
+##  8 bautijo02
+##  9 ortizda01
+## 10 davisch02
+## 11 fostege01
+## 12 thomeji01
+## 13 fieldce01
+## 14 jonesan01</code></pre>
+</div>
