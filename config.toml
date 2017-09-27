@@ -1,6 +1,6 @@
 baseURL = "http://ronrichardson.netlify.com/"
 languageCode = "en-us"
-title = "Minimal"
+title = "DATA 650 Blog - Ron Richardson"
 theme = "hugo-journal"
 #disqusShortname = "username" # delete this to disable disqus comments
 
@@ -9,7 +9,7 @@ theme = "hugo-journal"
     description = "RStudio Blog for DATA 650 at Mercyhurst University"
     tagline = "RStudio Blog for DATA 650 at Mercyhurst University"
     githubUsername = "rer145"
-    twitterUsername = "your_twitter_handle"
+    twitterUsername = "rer145"
     accent = "blue"
     showBorder = true
     backgroundColor = "white"

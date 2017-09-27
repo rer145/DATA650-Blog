@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test on Minimal</title>
-    <link>http://ronrichardson.netlify.com/tags/test/</link>
-    <description>Recent content in Test on Minimal</description>
+    <title>Test on DATA 650 Blog - Ron Richardson</title>
+    <link>/tags/test/</link>
+    <description>Recent content in Test on DATA 650 Blog - Ron Richardson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://ronrichardson.netlify.com/tags/test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Test Post</title>
-      <link>http://ronrichardson.netlify.com/post/test-post/</link>
+      <link>/post/test-post/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://ronrichardson.netlify.com/post/test-post/</guid>
+      <guid>/post/test-post/</guid>
       <description>library(Lahman)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionBatting %&amp;gt;%select(playerID, HR) %&amp;gt;%filter(HR &amp;gt; 50)## playerID HR## 1 ruthba01 54## 2 ruthba01 59## 3 ruthba01 60## 4 ruthba01 54## 5 wilsoha01 56## 6 foxxji01 58## 7 greenha01 58## 8 kinerra01 51## 9 mizejo01 51## 10 kinerra01 54## 11 mayswi01 51## 12 mantlmi01 52## 13 mantlmi01 54## 14 marisro01 61## 15 mayswi01 52## 16 fostege01 52## 17 fieldce01 51## 18 mcgwima01 52## 19 griffke02 56## 20 griffke02 56## 21 mcgwima01 70## 22 sosasa01 66## 23 mcgwima01 65## 24 sosasa01 63## 25 bondsba01 73## 26 gonzalu01 57## 27 rodrial01 52## 28 sosasa01 64## 29 rodrial01 57## 30 thomeji01 52## 31 jonesan01 51## 32 howarry01 58## 33 ortizda01 54## 34 rodrial01 54## 35 bautijo02 54## 36 davisch02 53</description>
     </item>
     
