@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.28" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta property="og:url" content="/post/introducing-flexdashboard/">
+
+    <title>Introducing flexdashboard - DATA 650 Blog - Ron Richardson</title>
+    <meta property="og:title" content="Introducing flexdashboard - DATA 650 Blog - Ron Richardson">
+    <meta property="og:type" content="article">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/journal.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="DATA 650 Blog - Ron Richardson">
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <nav class="site-nav">
+        <a href="/">Index</a>
+      </nav>
+
+
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Introducing flexdashboard</h1>
+      <time class="post-date" datetime="2017-09-29 00:00:00 UTC">29 Sep 2017</time>
+    </header>
+
+    <div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Dashboards are great tools for grouping common visualizations together into one page or site. This allows the user to consume large amounts of visualizations in a quick and easy method.</p>
+</div>
+<div id="example-dashboard" class="section level2">
+<h2>Example Dashboard</h2>
+<p>A search for dashboard on Google will result in millions of results. To show you a real life example, I have built a simple dashboard showing some basic statistics of my golf game over the last few years. The complete dataset can be found <a href="http://www.golftrack.xyz/stats/">on my website</a>. There are other examples that are far better, but one that I have started on using data gathered by myself.</p>
+</div>
+<div id="flexdashboard" class="section level2">
+<h2>Flexdashboard</h2>
+<p>Flexdashboard is another R package that will create dashboards for you using your own plots from ggplot (or any other graphing package). The benefit of this package is that all the nitty gritty details of having to make columns and making it responsive for the web or mobile devices is taken care of. All you have to worry about is gathering the data and building the visualizations you want to include.</p>
+</div>
+<div id="basic-example" class="section level2">
+<h2>Basic Example</h2>
+<p>As usual, we need to import our libraries and gather our data. For this example, we will just look at the home run and strikeout numbers from Babe Ruth’s career.</p>
+<pre class="r"><code>#import libraries
+library(Lahman)
+library(dplyr)
+library(ggplot2)
+
+#store data into a variable named df
+result&lt;-Batting %&gt;%
+  filter(playerID==&#39;ruthba01&#39;) %&gt;%
+  select(yearID, SO, HR)</code></pre>
+<p>Once we have that data we can focus on building our visualizations. We will be including the following three in our dashboard.</p>
+<pre class="r"><code>#scatterplot
+ggplot()+
+  geom_point(data=result,aes(x=SO,y=HR),color=&quot;red&quot;)+
+  xlab(&quot;Strikeouts&quot;)+
+  ylab(&quot;Home Runs&quot;)</code></pre>
+<p><img src="/post/2017-09-29-introducing-flexdashboard_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>#histogram
+ggplot()+
+  geom_histogram(data=result,aes(x=HR),color=&quot;blue&quot;,fill=&quot;white&quot;,bins=5)+
+  xlab(&quot;Home Runs&quot;)</code></pre>
+<p><img src="/post/2017-09-29-introducing-flexdashboard_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<pre class="r"><code>#timeseries
+ggplot()+
+  geom_line(data=result,aes(x=yearID,y=HR),stat=&quot;identity&quot;,color=&quot;green&quot;)+
+  geom_point(data=result,aes(x=yearID,y=HR),stat=&quot;identity&quot;,color=&quot;pink&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Home Runs&quot;)</code></pre>
+<p><img src="/post/2017-09-29-introducing-flexdashboard_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<p>Once we have these ready we can build our dashboard. Dashboards are not suited for a blog post, so all the code for this example can be found <a href="https://github.com/rer145/special-succotash">on GitHub</a>, and the resulting dashboard can be viewed <a href="https://rer145.github.io/special-succotash/babe-ruth.html">here</a>.</p>
+</div>
+<div id="advanced-example" class="section level2">
+<h2>Advanced Example</h2>
+<p>I decided to try and make a dashboard using data that I collected myself when I play golf. Using the same database as the first example linked out (a Microsoft SQL Server database), I created three simple graphs and combined them into the start of a basic dashboard. The database connection information has been removed from the code in GitHub, but the remaining R script and Rmd dashboard file are included.</p>
+<p><a href="https://github.com/rer145/special-succotash">GitHub code</a> / <a href="https://rer145.github.io/special-succotash/golftrack.html">Golf Dashboard</a></p>
+</div>
+
+
+  </article>
+
+
+      <footer class="site-footer">
+        <span itemscope itemtype="http://schema.org/Person">
+          <link itemprop="url" href="/">
+          <span itemprop="name"></span>
+
+          ,
+          <span itemprop="jobTitle">Grad Student</span> at
+          <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization"><a itemprop="url" href="https://www.mercyhurst.edu/"><span itemprop="name">Mercyhurst University</span></a></span><br>
+
+          <a itemprop="sameAs" href="https://github.com/rer145" title="GitHub">GH</a>
+
+          <a itemprop="sameAs" href="https://twitter.com/rer145" title="Twitter">TW</a>
+
+          
+        </span>
+
+        
+      </footer>
+    </div>
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
+

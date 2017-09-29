@@ -6,10 +6,20 @@
     <description>Recent content in Visualization on DATA 650 Blog - Ron Richardson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introducing flexdashboard</title>
+      <link>/post/introducing-flexdashboard/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/introducing-flexdashboard/</guid>
+      <description>IntroductionDashboards are great tools for grouping common visualizations together into one page or site. This allows the user to consume large amounts of visualizations in a quick and easy method.
+Example DashboardA search for dashboard on Google will result in millions of results. To show you a real life example, I have built a simple dashboard showing some basic statistics of my golf game over the last few years.</description>
+    </item>
     
     <item>
       <title>Using ggplot - Interactive Bar Plots</title>

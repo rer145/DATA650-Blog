@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dashboard on DATA 650 Blog - Ron Richardson</title>
+    <link>/tags/dashboard/</link>
+    <description>Recent content in Dashboard on DATA 650 Blog - Ron Richardson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/dashboard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing flexdashboard</title>
+      <link>/post/introducing-flexdashboard/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/introducing-flexdashboard/</guid>
+      <description>IntroductionDashboards are great tools for grouping common visualizations together into one page or site. This allows the user to consume large amounts of visualizations in a quick and easy method.
+Example DashboardA search for dashboard on Google will result in millions of results. To show you a real life example, I have built a simple dashboard showing some basic statistics of my golf game over the last few years.</description>
+    </item>
+    
+  </channel>
+</rss>
