@@ -89,12 +89,13 @@
     </item>
     
     <item>
-      <title>Scatterplots in R</title>
-      <link>/post/scatterplots-in-r/</link>
+      <title>Using ggplot - Scatterplots</title>
+      <link>/post/using-ggplot-scatterplots/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/scatterplots-in-r/</guid>
-      <description></description>
+      <guid>/post/using-ggplot-scatterplots/</guid>
+      <description>IntroductionA scatterplot is a useful visualization that compares two series of numbers against each other. This can be great for determining a correlation between the series. In our example below, we will compare Babe Ruth’s career home runs against his career strikeouts to see if there is any relationship between how many home runs he hit and if that means more strike outs.
+Basic ExampleFirst we need to import our libraries and gather our basic data.</description>
     </item>
     
     <item>
