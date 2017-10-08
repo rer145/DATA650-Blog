@@ -1,0 +1,94 @@
+---
+title: Cleaning Data with stringr
+author: Ron Richardson
+date: '2017-10-08'
+slug: cleaning-data-with-stringr
+categories:
+  - DATA 650
+  - R
+tags:
+  - stringr
+  - regex
+---
+
+## Introduction
+
+Occassionally, when we are using a set of data, there may be mistakes.  Before we can really make any decisions or visualizations using that data, we must ensure it is as accurate as possible.  In this post, we will look at using the R library *stringr* to filter out unwanted data.
+
+## Basic Example
+
+For this example, we will be using a data set from (Kaggle.com)[https://www.kaggle.com/orangutan/exploratory-analysis-of-the-korean-war] that contains all the US deaths from the Korean War. First, we import our libraries and look at the first few rows of data.
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(stringr)
+
+#read in the data
+deaths<-read.csv("KoreanConflict.csv", header=TRUE, stringsAsFactors=FALSE)
+
+head(deaths)
+```
+
+It appears that the INCIDENT_DATE field is formatted like so: YYYYMMDD.  To check this, let's compare the total number of rows in the database with how many rows fit that format.  To keep things simple, we will use a regular expression to check that the data contains only 8 numbers.
+
+```{r}
+#Get the total number of records int the data
+count(deaths) #36,574
+
+#compare INCIDENT_DATE against the regular expression and get the count of records
+fullDateRegEx = "^\\d{8}$"
+
+df<-deaths%>%
+  filter(str_detect(deaths$INCIDENT_DATE, fullDateRegEx)==TRUE)
+count(df) #33,370
+```
+
+Looking further into the data, we can see that the FATALITY column also appears to hold a date in the format we want, and only shows that when INCIDENT_DATE is invalid.  Using a simple for loop, we can check to see if FATALITY is valid when INCIDENT_DATE is not, and store the date in INCIDENT_DATE
+
+```{r}
+for (i in 1:dim(deaths)) {
+  #if INCIDENT_DATE is bad, but FATALITY is good, replace it
+  if (!str_detect(deaths$INCIDENT_DATE[i], fullDateRegEx) & str_detect(deaths$FATALITY[i], fullDateRegEx)) {
+    #print(paste(i, "There is a mistake here"))
+    deaths$INCIDENT_DATE[i]<-deaths$FATALITY[i]
+  }
+}
+
+#Check out counts again
+df<-deaths%>%
+  filter(str_detect(deaths$INCIDENT_DATE, fullDateRegEx)==TRUE)
+count(df) #36,511
+
+```
+
+This is an acceptable number of valid records (36,511 out of 36,574), so we can just filter out the remaining bad data and begin to use our data for visualizations and decision making.
+
+```{r}
+deaths<-deaths%>%
+  filter(str_detect(deaths$INCIDENT_DATE, fullDateRegEx)==TRUE)
+```
+
+## Visualization
+
+Now we can plot out a simple line chart of deaths by date using this newly cleaned data set.
+
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+library(lubridate)  #for parsing and dealing with dates
+
+deathsDf<-deaths%>%
+  group_by(INCIDENT_DATE)%>%
+  summarize(num_deaths=n())%>%
+  mutate(date=ymd(INCIDENT_DATE))%>%
+  filter(date<='1953-07-27')%>%
+  select(INCIDENT_DATE, date, num_deaths)
+
+#look at number of deaths by date
+ggplot()+
+  geom_line(data=deathsDf, aes(x=date,y=num_deaths))+
+  ggtitle("Korean War Deaths by Date")+
+  xlab("Date")+
+  ylab("Number of Deaths")+
+  scale_x_date(date_breaks="3 months", date_labels="%b %y") 
+```
+

@@ -6,10 +6,20 @@
     <description>Recent content in R on DATA 650 Blog - Ron Richardson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cleaning Data with stringr</title>
+      <link>/post/cleaning-data-with-stringr/</link>
+      <pubDate>Sun, 08 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cleaning-data-with-stringr/</guid>
+      <description>IntroductionOccassionally, when we are using a set of data, there may be mistakes. Before we can really make any decisions or visualizations using that data, we must ensure it is as accurate as possible. In this post, we will look at using the R library stringr to filter out unwanted data.
+Basic ExampleFor this example, we will be using a data set from (Kaggle.com)[https://www.kaggle.com/orangutan/exploratory-analysis-of-the-korean-war] that contains all the US deaths from the Korean War.</description>
+    </item>
     
     <item>
       <title>Introducing flexdashboard</title>
