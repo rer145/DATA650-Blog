@@ -1,16 +1,5 @@
----
-title: Creating PDF Articles with LaTeX
-author: Ron Richardson
-date: '2017-10-29'
-slug: creating-pdf-articles-with-latex
-categories:
-  - R
-  - latex
-tags:
-  - latex
-  - dplyr
----
-
+<!-- BLOGDOWN-HEAD -->
+<!-- /BLOGDOWN-HEAD -->
 
 
 <div id="introduction" class="section level2">
@@ -54,7 +43,7 @@ snsWordFreq&lt;-snsWords%&gt;%
 <p>Once we have the data in the format we need for the wordcloud, we can generate it using the wordcloud package.</p>
 <pre class="r"><code>library(wordcloud)
 wordcloud(snsWordFreq$word, snsWordFreq$count, max.words=100)</code></pre>
-<p><img src="/post/2017-10-29-creating-pdf-articles-with-latex_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="2017-10-29-creating-pdf-articles-with-latex_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="creating-an-article" class="section level2">
 <h2>Creating an Article</h2>
@@ -88,5 +77,5 @@ sns&lt;-austen_books()
 </div>
 <div id="creating-the-pdf" class="section level2">
 <h2>Creating the PDF</h2>
-<p>Using knitr as the global option for how the article is created, RStudio provides a compile PDF button. The result of which, can be viewed <a href="janeausten.pdf">here</a></p>
+<p>Using knitr as the global option for how the article is created, RStudio provides a compile PDF button. An example result can be viewed <a href="/post/janeausten.pdf">here</a></p>
 </div>

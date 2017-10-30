@@ -115,4 +115,4 @@ Finally, some paragraphs are indented inside the sections, so if you don't want 
 
 ## Creating the PDF
 
-Using knitr as the global option for how the article is created, RStudio provides a compile PDF button. The result of which, can be viewed [here](janeausten.pdf)
+Using knitr as the global option for how the article is created, RStudio provides a compile PDF button. The result of which, can be viewed [here](/post/janeausten.pdf)
