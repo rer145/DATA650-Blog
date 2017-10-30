@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latex on DATA 650 Blog - Ron Richardson</title>
+    <link>/tags/latex/</link>
+    <description>Recent content in Latex on DATA 650 Blog - Ron Richardson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating PDF Articles with LaTeX</title>
+      <link>/post/creating-pdf-articles-with-latex/</link>
+      <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/creating-pdf-articles-with-latex/</guid>
+      <description>IntroductionOften times in data science, or other areas of study, the requirement of writing an article and converting it to PDF will be needed. This post will demonstrate how to use LaTeX to create an article. Our example will be using an R package called janeaustenr to create a wordcloud from her novel “Sense &amp;amp; Sensibility”.
+Gathering the DataFirst, we will import our libraries and store the data we want to use in a dataframe.</description>
+    </item>
+    
+  </channel>
+</rss>

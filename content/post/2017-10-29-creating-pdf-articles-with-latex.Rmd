@@ -1,0 +1,118 @@
+---
+title: Creating PDF Articles with LaTeX
+author: Ron Richardson
+date: '2017-10-29'
+slug: creating-pdf-articles-with-latex
+categories:
+  - R
+  - latex
+tags:
+  - latex
+  - dplyr
+---
+
+## Introduction
+
+Often times in data science, or other areas of study, the requirement of writing an article and converting it to PDF will be needed. This post will demonstrate how to use LaTeX to create an article. Our example will be using an R package called janeaustenr to create a wordcloud from her novel "Sense & Sensibility".
+
+## Gathering the Data
+
+First, we will import our libraries and store the data we want to use in a dataframe. After we have our data, we will convert each line of text into individual words, and then remove any commonly used words, called stop words.  
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(stringr)
+library(tidytext)
+library(janeaustenr)
+
+#gather all the books available from the janeaustenr package
+sns<-austen_books()
+
+#filter out the book we want to analyze
+sns<-sns%>%
+  filter(book == 'Sense & Sensibility')
+
+#filter out any lines of text that only contain the chapter and number
+sns<-sns%>%
+  filter(!str_detect(sns$text, "^CHAPTER"))
+
+#remove the first 11 lines which contain only the title and author information
+sns<-sns[12:12562,]
+
+#use tidytext package to un-nest the words from each line
+snsWords<-sns%>%
+  unnest_tokens(word, text)
+
+#filter out any stop words we don't want included
+snsWords<-snsWords%>%
+  filter(!(word%in%stop_words$word))
+
+#group each word by how many times it occurs
+snsWordFreq<-snsWords%>%
+  group_by(word)%>%
+  summarize(count=n())
+```
+
+Once we have the data in the format we need for the wordcloud, we can generate it using the wordcloud package.
+
+```{r message=FALSE, warning=FALSE}
+library(wordcloud)
+wordcloud(snsWordFreq$word, snsWordFreq$count, max.words=100)
+```
+
+## Creating an Article
+
+Since we are using RStudio, we can create a new document of the type R Sweave. This will give us a template with the following basic structure, which defines it as an article with a document.
+
+```{r eval=FALSE}
+\documentclass{article}
+
+\begin{document}
+
+\end{document}
+```
+
+Inside our begin/end document tags, we want to create a title and show our name as the author. To do so only takes three lines of code:
+
+```{r eval=FALSE}
+\title{Sense \& Sensibility Wordcloud}
+\author{Ron Richardson}
+\maketitle
+```
+
+All articles in the scientific community contains an abstract, which gives the reader an overview of what the article is about.  After the title, we can add our abstract like so:
+
+```{r eval=FALSE}
+\begin{abstract}
+This article we construct a wordcloud using Jane Austen's book "Sense \& Sensibility", via the R package, janeaustenr.
+\end{abstract}
+```
+
+We can then split up the text of our article into sections. Sections are given a larger font size and help break up the article into relevant parts. The textit tag will italicize the text.
+
+```{r eval=FALSE}
+\section{Introduction}
+\textit{Sense \& Sensibility} is a novel was written in 1811 by Jane Austen. This article will show how to construct a wordcloud with the most commonly used words in the book.
+
+\section{The Jane Austin Package}
+There is a relatively new package for R called janeaustenr. This package contains all the novels written by Jane Austen. First, we need to install this package and load it in with the library command. Then, by calling the following function and store the result into a dataframe.
+```
+
+Then, we can add code snippets in, just like our blog posts with R Markdown, however the syntax is slightly different.
+
+```{r eval=FALSE}
+<<warning=FALSE>>=
+library(janeaustenr)
+sns<-austen_books()
+@
+```
+
+Finally, some paragraphs are indented inside the sections, so if you don't want that, it can easily be removed with the noindent tag.
+
+```{r eval=FALSE}
+\noindent This dataframe has two columns, one for each line in the novel, and another with the title of novel the line of text is from. Let's first filter using dplyr so we have only just the lines from \textit{Sense \& Sensibility}
+```
+
+## Creating the PDF
+
+Using knitr as the global option for how the article is created, RStudio provides a compile PDF button. The result of which, can be viewed [here](janeausten.pdf)
