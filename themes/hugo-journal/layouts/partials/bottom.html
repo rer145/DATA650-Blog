@@ -2,7 +2,7 @@
       <footer class="site-footer">
         <span itemscope itemtype="http://schema.org/Person">
           <link itemprop="url" href="{{ .Site.BaseURL }}">
-          <span itemprop="name">{{- .Site.Author.name -}}</span>
+          <span itemprop="name">{{- .Site.Params.author -}}</span>
 
           {{ if isset .Site.Params "work" -}},
           <span itemprop="jobTitle">{{- .Site.Params.work.jobTitle -}}</span> at
@@ -14,7 +14,11 @@
           <br>
 
           {{ if isset .Site.Params "githubusername" -}}
-          <a itemprop="sameAs" href="https://github.com/{{ .Site.Params.githubUsername }}" title="GitHub">GH</a>
+          <a itemprop="sameAs" href="https://github.com/{{ .Site.Params.githubUsername }}" title="GitHub">GitHub</a>
+          {{- end }}
+          
+          {{ if isset .Site.Params "githubusername" -}}
+          <a itemprop="sameAs" href="https://gist.github.com/{{ .Site.Params.githubUsername }}" title="GitHub Gists">GitHub Gists</a>
           {{- end }}
 
           {{ if isset .Site.Params "twitterusername" -}}

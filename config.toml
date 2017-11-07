@@ -1,6 +1,6 @@
-baseURL = "http://ronrichardson.netlify.com/"
+baseURL = "http://www.learningrfordatascience.com/"
 languageCode = "en-us"
-title = "DATA 650 Blog - Ron Richardson"
+title = "Learning R for Data Science - Ron Richardson"
 theme = "hugo-journal"
 #disqusShortname = "username" # delete this to disable disqus comments
 
@@ -58,7 +58,7 @@ theme = "hugo-journal"
     weight = 3
 
 [[menu.icon]]
-    url = "https://www.linkedin.com/in/username/"
+    url = "https://www.linkedin.com/in/rer145/"
     name = "linkedin"
     weight = 4
 
