@@ -1,15 +1,16 @@
 baseURL = "http://www.learningrfordatascience.com/"
 languageCode = "en-us"
-title = "Learning R for Data Science - Ron Richardson"
+title = "Learning R for Data Science"
 theme = "hugo-journal"
 #disqusShortname = "username" # delete this to disable disqus comments
 
 [params]
     author = "Ron Richardson"
-    description = "RStudio Blog for DATA 650 at Mercyhurst University"
-    tagline = "RStudio Blog for DATA 650 at Mercyhurst University"
+    description = "Learning R for Data Science at Mercyhurst University"
+    tagline = "Learning R for Data Science at Mercyhurst University"
     githubUsername = "rer145"
     twitterUsername = "rer145"
+    linkedinUsername = "rer145"
     accent = "blue"
     showBorder = true
     backgroundColor = "white"

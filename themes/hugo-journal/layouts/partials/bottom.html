@@ -22,7 +22,11 @@
           {{- end }}
 
           {{ if isset .Site.Params "twitterusername" -}}
-          <a itemprop="sameAs" href="https://twitter.com/{{ .Site.Params.twitterUsername }}" title="Twitter">TW</a>
+          <a itemprop="sameAs" href="https://twitter.com/{{ .Site.Params.twitterUsername }}" title="Twitter">Twitter</a>
+          {{- end}}
+          
+          {{ if isset .Site.Params "linkedinusername" -}}
+          <a itemprop="sameAs" href="https://www.linkedin.com/in/{{ .Site.Params.twitterUsername }}/" title="Twitter">LinkedIn</a>
           {{- end}}
 
           {{ if isset .Site.Params "gpg" -}}

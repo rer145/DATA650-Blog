@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Learning R for Data Science - Ron Richardson</title>
+    <title>Tags on Learning R for Data Science</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Learning R for Data Science - Ron Richardson</description>
+    <description>Recent content in Tags on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Sep 2017 00:00:00 +0000</lastBuildDate>
@@ -147,6 +147,15 @@
     </item>
     
     <item>
+      <title>Sentiment Analysis</title>
+      <link>/tags/sentiment-analysis/</link>
+      <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sentiment-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Stringr</title>
       <link>/tags/stringr/</link>
       <pubDate>Sun, 08 Oct 2017 00:00:00 +0000</pubDate>
@@ -161,6 +170,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tags/syntax-highlighting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidytext</title>
+      <link>/tags/tidytext/</link>
+      <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tidytext/</guid>
       <description></description>
     </item>
     
