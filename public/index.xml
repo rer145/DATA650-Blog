@@ -78,6 +78,16 @@
     </item>
     
     <item>
+      <title>Creating a Wordcloud</title>
+      <link>/post/creating-a-wordcloud/</link>
+      <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/creating-a-wordcloud/</guid>
+      <description>IntroductionA wordcloud is a common visualization to show how often a word is repeated in a set of text. The words appear on the image and the larger the word, the more common it is in the text. In this example, we will be evaluating Jane Austen’s novel “Sense &amp;amp; Sensibility”, which is available via the R package janeaustenr.
+Gathering and Cleaning the DataFirst, we will import our libraries and using the austen_books() funtion from janeaustenr, filter out the book “Sense &amp;amp; Sensibility”.</description>
+    </item>
+    
+    <item>
       <title>Cleaning Data with stringr</title>
       <link>/post/cleaning-data-with-stringr/</link>
       <pubDate>Sun, 08 Oct 2017 00:00:00 +0000</pubDate>

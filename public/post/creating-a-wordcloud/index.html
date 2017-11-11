@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.28" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ron Richardson">
+    <meta property="og:url" content="/post/creating-a-wordcloud/">
+
+    <title>Creating a Wordcloud - Learning R for Data Science</title>
+    <meta property="og:title" content="Creating a Wordcloud - Learning R for Data Science">
+    <meta property="og:type" content="article">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/journal.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Learning R for Data Science">
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <nav class="site-nav">
+        <a href="/">Index</a>
+      </nav>
+
+
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Creating a Wordcloud</h1>
+      <time class="post-date" datetime="2017-10-25 00:00:00 UTC">25 Oct 2017</time>
+    </header>
+
+    <div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>A wordcloud is a common visualization to show how often a word is repeated in a set of text. The words appear on the image and the larger the word, the more common it is in the text. In this example, we will be evaluating Jane Austen’s novel “Sense &amp; Sensibility”, which is available via the R package janeaustenr.</p>
+</div>
+<div id="gathering-and-cleaning-the-data" class="section level2">
+<h2>Gathering and Cleaning the Data</h2>
+<p>First, we will import our libraries and using the austen_books() funtion from janeaustenr, filter out the book “Sense &amp; Sensibility”.</p>
+<pre class="r"><code>library(dplyr)
+library(stringr)
+library(tidytext)
+library(janeaustenr)
+
+#gather all the books available from the janeaustenr package
+sns&lt;-austen_books()
+
+#filter out the book we want to analyze
+sns&lt;-sns%&gt;%
+  filter(book == &#39;Sense &amp; Sensibility&#39;)
+
+print(sns, n=20)</code></pre>
+<pre><code>## # A tibble: 12,624 x 2
+##                                                                      text
+##                                                                     &lt;chr&gt;
+##  1                                                  SENSE AND SENSIBILITY
+##  2                                                                       
+##  3                                                         by Jane Austen
+##  4                                                                       
+##  5                                                                 (1811)
+##  6                                                                       
+##  7                                                                       
+##  8                                                                       
+##  9                                                                       
+## 10                                                              CHAPTER 1
+## 11                                                                       
+## 12                                                                       
+## 13  The family of Dashwood had long been settled in Sussex.  Their estate
+## 14   was large, and their residence was at Norland Park, in the centre of
+## 15      their property, where, for many generations, they had lived in so
+## 16    respectable a manner as to engage the general good opinion of their
+## 17  surrounding acquaintance.  The late owner of this estate was a single
+## 18   man, who lived to a very advanced age, and who for many years of his
+## 19 life, had a constant companion and housekeeper in his sister.  But her
+## 20       death, which happened ten years before his own, produced a great
+## # ... with 1.26e+04 more rows, and 1 more variables: book &lt;fctr&gt;</code></pre>
+<p>Looking at the data, we can see that there are some words we don’t want to include, such as the title for each chapter. We know that the word “Chapter” occurs for each chapter, so let’s eliminate that by using stringr’s function str_detect() and a basic regular expression.</p>
+<pre class="r"><code>sns&lt;-sns%&gt;%
+  filter(!str_detect(sns$text, &quot;^CHAPTER&quot;))</code></pre>
+<p>Wordclouds need to count the words, not lines of text, so next we have to split apart each line of text into words. The tidytext package provides a function called unnest_tokens() which does exactly that. In short, it splits a line of text using a blank space as the seperator. This can result in some of the words to be numbers, which you may or may not want to exclude later on.</p>
+<pre class="r"><code># word is the column the word will go in
+# text is the column from sns that will be parsed
+words&lt;-sns%&gt;%
+  unnest_tokens(word, text)
+
+print(words, n=20)</code></pre>
+<pre><code>## # A tibble: 119,857 x 2
+##                   book        word
+##                 &lt;fctr&gt;       &lt;chr&gt;
+##  1 Sense &amp; Sensibility       sense
+##  2 Sense &amp; Sensibility         and
+##  3 Sense &amp; Sensibility sensibility
+##  4 Sense &amp; Sensibility          by
+##  5 Sense &amp; Sensibility        jane
+##  6 Sense &amp; Sensibility      austen
+##  7 Sense &amp; Sensibility        1811
+##  8 Sense &amp; Sensibility         the
+##  9 Sense &amp; Sensibility      family
+## 10 Sense &amp; Sensibility          of
+## 11 Sense &amp; Sensibility    dashwood
+## 12 Sense &amp; Sensibility         had
+## 13 Sense &amp; Sensibility        long
+## 14 Sense &amp; Sensibility        been
+## 15 Sense &amp; Sensibility     settled
+## 16 Sense &amp; Sensibility          in
+## 17 Sense &amp; Sensibility      sussex
+## 18 Sense &amp; Sensibility       their
+## 19 Sense &amp; Sensibility      estate
+## 20 Sense &amp; Sensibility         was
+## # ... with 1.198e+05 more rows</code></pre>
+<p>After that, we want to exclude any other commonly used words. These are called stop words, and include words like “a”, “and”, “the”. There are several others included in a dataframe provided by tidytext called stop_words. Using dplyr, we can filter these out quite easily.</p>
+<pre class="r"><code>words&lt;-words%&gt;%
+  filter(!(word %in% stop_words$word))</code></pre>
+</div>
+<div id="grouping-and-summarizing-the-data" class="section level2">
+<h2>Grouping and Summarizing the Data</h2>
+<p>Now that we have our data split up into words, we need to count how many times a word is used. Using dplyr, we can create a new dataframe to group by the word, and then count it.</p>
+<pre class="r"><code>wordFreq&lt;-words%&gt;%
+  group_by(word)%&gt;%
+  summarize(count=n())</code></pre>
+</div>
+<div id="creating-the-wordcloud" class="section level2">
+<h2>Creating the Wordcloud</h2>
+<p>Creating a wordcloud is quite simple once the library has been imported. All we need to do is pass in the word, and the number of times it occurs. We can then configure how many words will be shown, or how many times the word has to appear in order to include it. In this example, there are so many used words, that the wordcloud takes a long time to generate, so we are limiting it to the top 100 words used.</p>
+<pre class="r"><code>library(wordcloud)
+wordcloud(wordFreq$word, wordFreq$count, max.words=100)</code></pre>
+<p><img src="/post/2017-10-25-creating-a-wordcloud_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="the-code" class="section level3">
+<h3>The Code</h3>
+<p>The full code for this article can be found on my <a href="https://gist.github.com/rer145/3190043d3fa34c94f8e9be4a4d49bce3">GitHub Gist Page</a>.</p>
+</div>
+</div>
+
+
+  </article>
+
+
+      <footer class="site-footer">
+        <span itemscope itemtype="http://schema.org/Person">
+          <link itemprop="url" href="/">
+          <span itemprop="name">Ron Richardson</span>
+
+          ,
+          <span itemprop="jobTitle">Grad Student</span> at
+          <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization"><a itemprop="url" href="https://www.mercyhurst.edu/"><span itemprop="name">Mercyhurst University</span></a></span><br>
+
+          <a itemprop="sameAs" href="https://github.com/rer145" title="GitHub">GitHub</a>
+          
+          <a itemprop="sameAs" href="https://gist.github.com/rer145" title="GitHub Gists">GitHub Gists</a>
+
+          <a itemprop="sameAs" href="https://twitter.com/rer145" title="Twitter">Twitter</a>
+          
+          <a itemprop="sameAs" href="https://www.linkedin.com/in/rer145/" title="Twitter">LinkedIn</a>
+
+          
+        </span>
+
+        
+      </footer>
+    </div>
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
+

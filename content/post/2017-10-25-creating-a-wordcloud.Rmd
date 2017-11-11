@@ -1,0 +1,85 @@
+---
+title: Creating a Wordcloud
+author: Ron Richardson
+date: '2017-10-25'
+slug: creating-a-wordcloud
+categories:
+  - R
+tags:
+  - wordcloud
+  - tidytext
+---
+
+## Introduction
+
+A wordcloud is a common visualization to show how often a word is repeated in a set of text. The words appear on the image and the larger the word, the more common it is in the text. In this example, we will be evaluating Jane Austen's novel "Sense & Sensibility", which is available via the R package janeaustenr.
+
+## Gathering and Cleaning the Data
+
+First, we will import our libraries and using the austen_books() funtion from janeaustenr, filter out the book "Sense & Sensibility".
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(stringr)
+library(tidytext)
+library(janeaustenr)
+
+#gather all the books available from the janeaustenr package
+sns<-austen_books()
+
+#filter out the book we want to analyze
+sns<-sns%>%
+  filter(book == 'Sense & Sensibility')
+
+print(sns, n=20)
+```
+
+Looking at the data, we can see that there are some words we don't want to include, such as the title for each chapter.  We know that the word "Chapter" occurs for each chapter, so let's eliminate that by using stringr's function str_detect() and a basic regular expression.
+
+```{r message=FALSE, warning=FALSE}
+sns<-sns%>%
+  filter(!str_detect(sns$text, "^CHAPTER"))
+```
+
+Wordclouds need to count the words, not lines of text, so next we have to split apart each line of text into words. The tidytext package provides a function called unnest_tokens() which does exactly that. In short, it splits a line of text using a blank space as the seperator. This can result in some of the words to be numbers, which you may or may not want to exclude later on.
+
+```{r message=FALSE, warning=FALSE}
+# word is the column the word will go in
+# text is the column from sns that will be parsed
+words<-sns%>%
+  unnest_tokens(word, text)
+
+print(words, n=20)
+```
+
+After that, we want to exclude any other commonly used words. These are called stop words, and include words like "a", "and", "the".  There are several others included in a dataframe provided by tidytext called stop_words.  Using dplyr, we can filter these out quite easily.
+
+```{r message=FALSE, warning=FALSE}
+words<-words%>%
+  filter(!(word %in% stop_words$word))
+```
+
+## Grouping and Summarizing the Data
+
+Now that we have our data split up into words, we need to count how many times a word is used. Using dplyr, we can create a new dataframe to group by the word, and then count it.
+
+```{r message=FALSE, warning=FALSE}
+wordFreq<-words%>%
+  group_by(word)%>%
+  summarize(count=n())
+```
+
+## Creating the Wordcloud
+
+Creating a wordcloud is quite simple once the library has been imported. All we need to do is pass in the word, and the number of times it occurs.  We can then configure how many words will be shown, or how many times the word has to appear in order to include it.  In this example, there are so many used words, that the wordcloud takes a long time to generate, so we are limiting it to the top 100 words used.
+
+```{r message=FALSE, warning=FALSE}
+library(wordcloud)
+wordcloud(wordFreq$word, wordFreq$count, max.words=100)
+```
+
+
+
+### The Code
+
+The full code for this article can be found on my [GitHub Gist Page](https://gist.github.com/rer145/3190043d3fa34c94f8e9be4a4d49bce3).
