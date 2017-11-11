@@ -105,7 +105,7 @@ print(words, n=20)</code></pre>
 </div>
 <div id="creating-the-plot" class="section level2">
 <h2>Creating the Plot</h2>
-<p>We start off creating our bar plot, just as we learned in a [previous post[(/post/using-ggplot-bar-plots/). However, this time, we will use the facet_wrap() function to split apart the sentiment into separate plots. Using the ~ character, we specify which column will be used as our grouping, in this case the sentiment column.</p>
+<p>We start off creating our bar plot, just as we learned in a <a href="/post/using-ggplot-bar-plots/">previous post</a>. However, this time, we will use the facet_wrap() function to split apart the sentiment into separate plots. Using the ~ character, we specify which column will be used as our grouping, in this case the sentiment column.</p>
 <p>To display the plots equally, side by side, we use the scales=“free_y” argument.</p>
 <pre class="r"><code>ggplot()+
   geom_bar(data=words, aes(x=word, y=count), stat=&quot;identity&quot;)+
