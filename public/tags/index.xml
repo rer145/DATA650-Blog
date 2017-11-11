@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,7 +23,7 @@
     <item>
       <title>Charts</title>
       <link>/tags/charts/</link>
-      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/charts/</guid>
       <description></description>
@@ -62,6 +62,15 @@
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/ggiraph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ggplot</title>
+      <link>/tags/ggplot/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ggplot/</guid>
       <description></description>
     </item>
     
