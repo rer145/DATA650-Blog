@@ -6,10 +6,30 @@
     <description>Recent content in Posts on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dynamic Wordclouds with Wordcloud2</title>
+      <link>/post/dynamic-wordclouds-with-wordcloud2/</link>
+      <pubDate>Mon, 13 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dynamic-wordclouds-with-wordcloud2/</guid>
+      <description>IntroductionWordclouds are great tools to quickly see the words used in a piece of text, but they can get boring to look at. In this post, we introduce a new R package called wordcloud2. This package will dynamically plot the wordcloud on screen, add hoverability to each word, and be able to form the wordcloud into different shapes.
+Getting our DataOnce again, we will use the text from Bram Stoker’s “Dracula”.</description>
+    </item>
+    
+    <item>
+      <title>Combining Multiple Wordclouds into one</title>
+      <link>/post/combining-multiple-wordclouds-into-one/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/combining-multiple-wordclouds-into-one/</guid>
+      <description>IntroductionIn the previous post titled “Simple Sentiment Analysis”, we plotted both positive and negative words onto one line chart. In “Using ggplot - Introduction to facet_wrap()”, we combined two different bar charts into one plot, but positive and negative words were separated. In this example, we will do something similar, but with wordclouds.
+Getting Data to AnalyzeWe have previously built a wordcloud using Jane Austen’s novel “Sense &amp;amp; Sensibility”, but for this example, will continue using Bram Stoker’s “Dracula” to create a positive and negative wordcloud.</description>
+    </item>
     
     <item>
       <title>Using ggplot - Introduction to facet_wrap</title>

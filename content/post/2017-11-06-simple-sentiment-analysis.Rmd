@@ -35,9 +35,9 @@ words$grouping<-words$line %/% 80
 ```
 
 
-## Bing Sentiment
+## Bing Lexicon
 
-The first sentiment set we will look at is bing. This sentiment provides a list of words and rates it as either positive or negative. It is a simple way of determining the overall feeling of the next. Once we have the sentiments, we will join our words dataframe with the bing sentiment words. This will create one dataframe with just the words we have a bing sentiment for.
+The first lexicon we will look at is bing. This lexicon provides a list of words and rates it as either positive or negative. It is a simple way of determining the overall feeling of the next. Once we have the lexicon, we will it with our dataframe of words. This will create one dataframe with just the words from Dracula that are in the Bing lexicon.
 
 ```{r message=FALSE, warning=FALSE}
 bing<-get_sentiments('bing')
@@ -53,9 +53,9 @@ words_bing$score[negrows]<--1
 ```
 
 
-## Afinn Sentiment
+## Afinn Lexicon
 
-Another set of sentiment we will look at is called afinn.  This sentiment expands on bing a bit by assigning a numerical score to each word. Negative numbers are negative in sentiment, while positive numbers are positive.  The larger the deviation from zero, the more severe the negativity or positivity. Since we already have a score for each word, we only need to join our words to the afinn sentiment set.
+Another lexicon we will look at is called afinn.  This lexicon expands on bing a bit by assigning a numerical score to each word. Negative numbers are negative in sentiment, while positive numbers are positive.  The larger the deviation from zero, the more severe the negativity or positivity. Since we already have a score for each word, we only need to join our words to the afinn lexicon.
 
 ```{r message=FALSE, warning=FALSE}
 afinn<-get_sentiments('afinn')
@@ -65,7 +65,7 @@ words_afinn<-inner_join(words, afinn)
 
 ## Plotting the Data
 
-Using ggplot2, we can plot a line chart of each sentiment to compare the scoring values for each group of 80 lines. First we must query our words to group each 80 lines, and sum up the total score.
+Using ggplot2, we can plot a line chart of each lexicon to compare the scoring values for each group of 80 lines. First we must query our words to group each 80 lines, and sum up the total score.
 
 ```{r message=FALSE, warning=FALSE}
 sent_afinn<-words_afinn%>%
@@ -77,7 +77,7 @@ sent_bing<-words_bing%>%
   summarize(value=sum(score))
 ```
 
-Now, a simple line chart for both sentiment dataframes will compare the two values.
+Now, a simple line chart for both lexicon dataframes will compare the two values.
 
 ```{r message=FALSE, warning=FALSE}
 library(ggplot2)

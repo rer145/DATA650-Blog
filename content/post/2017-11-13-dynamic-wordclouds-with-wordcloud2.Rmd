@@ -1,0 +1,75 @@
+---
+title: Dynamic Wordclouds with Wordcloud2
+author: Ron Richardson
+date: '2017-11-13'
+slug: dynamic-wordclouds-with-wordcloud2
+categories:
+  - R
+tags:
+  - wordcloud
+  - wordcloud2
+---
+
+## Introduction
+
+[Wordclouds](/post/creating-a-wordcloud/) are great tools to quickly see the words used in a piece of text, but they can get boring to look at. In this post, we introduce a new R package called wordcloud2. This package will dynamically plot the wordcloud on screen, add hoverability to each word, and be able to form the wordcloud into different shapes.
+
+## Getting our Data
+
+Once again, we will use the text from Bram Stoker's "Dracula". For a more indepth explanation of how we get this data, please see the post ["Simple Sentiment Analysis"](/post/simple-sentiment-analysis/).
+
+```{r message=FALSE, warning=FALSE}
+library(gutenbergr)
+library(tidytext)
+library(dplyr)
+library(wordcloud2)
+
+dracula<-gutenberg_download(345)
+dracula$gutenberg_id<-NULL
+
+dracula<-dracula%>%
+  unnest_tokens(word, text)
+
+bing<-get_sentiments('bing')
+dracula<-inner_join(dracula, bing)
+```
+
+We also need to count up the number of occurrences of each word in the text, using dplyr.
+
+```{r message=FALSE, warning=FALSE}
+words<-dracula%>%
+  group_by(word)%>%
+  summarize(count=n())%>%
+  arrange(count)
+```
+
+## Using wordcloud2
+
+Wordcloud2 has several options for how to shape the wordcloud. The available shapes are:
+* circle
+* cardioid
+* diamond
+* triangle
+* triangle-forward
+* pentagon
+* star
+
+For this example, we will make a triangle of the words, and also change the background color to be black.
+
+```{r message=FALSE, warning=FALSE}
+wordcloud2(words, shape='triangle', backgroundColor='black')
+```
+
+Another fun way to use wordcloud2 is to plot the wordcloud using an image of any shape. The image must have a clear delineation between light and dark colors.  Here, we have a simple image of a bat, which we can pass to wordcloud2 and its shape will resemble our image.
+
+![](bat.jpg)
+
+```{r message=FALSE, warning=FALSE}
+# example of wordcloud2 with a shape
+# shapes: circle, cardioid, diamond, triangle-forward, triangle, pentagon, star
+wordcloud2(words, fig='bat.jpg')
+```
+
+### The Code
+
+The code for this post can be found on my [GitHub Gists page](https://gist.github.com/rer145/edb11422ad6ceffe220b9002fa4624d0).

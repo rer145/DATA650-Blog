@@ -33,9 +33,9 @@ words&lt;-dracula%&gt;%
   unnest_tokens(word, text)
 words$grouping&lt;-words$line %/% 80</code></pre>
 </div>
-<div id="bing-sentiment" class="section level2">
-<h2>Bing Sentiment</h2>
-<p>The first sentiment set we will look at is bing. This sentiment provides a list of words and rates it as either positive or negative. It is a simple way of determining the overall feeling of the next. Once we have the sentiments, we will join our words dataframe with the bing sentiment words. This will create one dataframe with just the words we have a bing sentiment for.</p>
+<div id="bing-lexicon" class="section level2">
+<h2>Bing Lexicon</h2>
+<p>The first lexicon we will look at is bing. This lexicon provides a list of words and rates it as either positive or negative. It is a simple way of determining the overall feeling of the next. Once we have the lexicon, we will it with our dataframe of words. This will create one dataframe with just the words from Dracula that are in the Bing lexicon.</p>
 <pre class="r"><code>bing&lt;-get_sentiments(&#39;bing&#39;)
 words_bing&lt;-inner_join(words, bing)</code></pre>
 <p>Since there is no numerical score given for each word, we can assign +1 for positive and -1 for negative. This will help us later when we are trying to plot the overall value of each group of lines.</p>
@@ -43,15 +43,15 @@ words_bing&lt;-inner_join(words, bing)</code></pre>
 negrows&lt;-which(words_bing$sentiment==&#39;negative&#39;)
 words_bing$score[negrows]&lt;--1</code></pre>
 </div>
-<div id="afinn-sentiment" class="section level2">
-<h2>Afinn Sentiment</h2>
-<p>Another set of sentiment we will look at is called afinn. This sentiment expands on bing a bit by assigning a numerical score to each word. Negative numbers are negative in sentiment, while positive numbers are positive. The larger the deviation from zero, the more severe the negativity or positivity. Since we already have a score for each word, we only need to join our words to the afinn sentiment set.</p>
+<div id="afinn-lexicon" class="section level2">
+<h2>Afinn Lexicon</h2>
+<p>Another lexicon we will look at is called afinn. This lexicon expands on bing a bit by assigning a numerical score to each word. Negative numbers are negative in sentiment, while positive numbers are positive. The larger the deviation from zero, the more severe the negativity or positivity. Since we already have a score for each word, we only need to join our words to the afinn lexicon.</p>
 <pre class="r"><code>afinn&lt;-get_sentiments(&#39;afinn&#39;)
 words_afinn&lt;-inner_join(words, afinn)</code></pre>
 </div>
 <div id="plotting-the-data" class="section level2">
 <h2>Plotting the Data</h2>
-<p>Using ggplot2, we can plot a line chart of each sentiment to compare the scoring values for each group of 80 lines. First we must query our words to group each 80 lines, and sum up the total score.</p>
+<p>Using ggplot2, we can plot a line chart of each lexicon to compare the scoring values for each group of 80 lines. First we must query our words to group each 80 lines, and sum up the total score.</p>
 <pre class="r"><code>sent_afinn&lt;-words_afinn%&gt;%
   group_by(grouping)%&gt;%
   summarize(value=sum(score))
@@ -59,7 +59,7 @@ words_afinn&lt;-inner_join(words, afinn)</code></pre>
 sent_bing&lt;-words_bing%&gt;%
   group_by(grouping)%&gt;%
   summarize(value=sum(score))</code></pre>
-<p>Now, a simple line chart for both sentiment dataframes will compare the two values.</p>
+<p>Now, a simple line chart for both lexicon dataframes will compare the two values.</p>
 <pre class="r"><code>library(ggplot2)
 ggplot()+
   geom_line(data=sent_afinn, aes(x=grouping,y=value), color=&#39;orange&#39;)+
