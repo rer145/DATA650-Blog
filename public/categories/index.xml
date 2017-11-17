@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Learning R for Data Science</title>
-    <link>/categories/</link>
+    <link>http://www.learningrfordatascience.com/categories/</link>
     <description>Recent content in Categories on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.learningrfordatascience.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data 650</title>
-      <link>/categories/data-650/</link>
+      <link>http://www.learningrfordatascience.com/categories/data-650/</link>
       <pubDate>Sun, 08 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/data-650/</guid>
+      <guid>http://www.learningrfordatascience.com/categories/data-650/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggplot</title>
-      <link>/categories/ggplot/</link>
+      <link>http://www.learningrfordatascience.com/categories/ggplot/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ggplot/</guid>
+      <guid>http://www.learningrfordatascience.com/categories/ggplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Latex</title>
-      <link>/categories/latex/</link>
+      <link>http://www.learningrfordatascience.com/categories/latex/</link>
       <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/latex/</guid>
+      <guid>http://www.learningrfordatascience.com/categories/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Mon, 13 Nov 2017 00:00:00 +0000</pubDate>
+      <link>http://www.learningrfordatascience.com/categories/r/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>http://www.learningrfordatascience.com/categories/r/</guid>
       <description></description>
     </item>
     

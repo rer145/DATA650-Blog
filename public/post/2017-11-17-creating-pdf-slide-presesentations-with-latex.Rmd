@@ -1,0 +1,113 @@
+---
+title: Creating PDF Slide Presesentations with LaTeX
+author: Ron Richardson
+date: '2017-11-17'
+slug: creating-pdf-slide-presesentations-with-latex
+categories:
+  - R
+tags:
+  - latex
+  - beamer
+---
+
+## Introduction
+
+In the post ["Creating PDF Articles with LaTeX"](/post/creating-pdf-articles-with-latex/), we created an article and converted it to PDF with LaTeX. In this article, we will create a slideshow type presentation and convert it to PDF using beamer and LaTeX. 
+
+## Creating the Document
+
+Similar to the article setup, we need to create our document and start the title. For the article, we used a document class of "article", but for this type, we will use the document class of "beamer".
+
+```{r eval=FALSE}
+\documentclass{beamer}
+
+\begin{document}
+
+\title{Positive and Negative Words in Dracula}
+\author{Ron Richardson}
+
+
+\end{document}
+```
+
+## Adding a Slide
+
+Each slide (or page) in this presentation is called a frame and is separated by a page break. To create a title page, using the title and author information we provided above, we use the titlepage command. This should be added under the author command, but before the end of the document.
+
+```{r eval=FALSE}
+\begin{frame}
+  \titlepage
+\end{frame}
+```
+
+Next, we can create a table of contents automatically in our next frame. We don't have anything yet to put in there, but it will be automatically generated as we keep adding more frames. This should be added under our previous frame, as this will be our second slide in the presentation.
+
+```{r eval=FALSE}
+\begin{frame}
+  \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+```
+
+## Adding an Itemized Slide
+
+Now we're about to add our first slide of custom code. We will be creating our presentation for the ["Introduction to facet_wrap()"](/post/using-ggplot-introduction-to-facet-wrap/) post. Our first frame will show all the libraries we need for the code.  Since there are 5 libraries we need to load, it might be nice to show them being added to the frame one by one. This will put one line of code on each slide and the list will continue to build as we move through the pages. This is done by using the itemize and item commands.
+
+We added the section command before our frame as well. The table of contents will use each section and the title given to generate the list and page numbers. The title does not need to be the same as the frame title.
+
+Additionally, when adding code to a frame, it is very important to add the [fragile] argument to the begin frame command.
+
+```{r eval=FALSE}
+\section{Install and Load Libraries}
+\begin{frame}[fragile]
+  \frametitle{Install and Load Libraries}
+    \begin{itemize}
+      \item<1->
+      <<warning=FALSE, message=FALSE>>=
+      library(dplyr)
+      @
+      \item<2->
+      <<warning=FALSE, message=FALSE>>=
+      library(gutenbergr)
+      @
+      \item<3->
+      <<warning=FALSE, message=FALSE>>=
+      library(tidytext)
+      @
+      \item<4->
+      <<warning=FALSE, message=FALSE>>=
+      library(stringr)
+      @
+      \item<5->
+      <<warning=FALSE, message=FALSE>>=
+      library(ggplot2)
+      @
+    \end{itemize}
+\end{frame}
+```
+
+## Adding a Slide of Code
+
+We will add one more slide to our presentation, and it will only contain the code an the output we want.
+
+```{r eval=FALSE}
+\section{Searching for a Novel}
+\begin{frame}[fragile]
+  \frametitle{Searching for a Novel}
+  <<warning=FALSE, message=FALSE>>=
+  df<-gutenberg_works(str_detect(title, 'Dracula'))
+  df$gutenberg_id
+  df$title
+  @
+\end{frame}
+```
+
+## Generating the PDF file
+
+Using knitr from within R Studio, compile the file to a PDF. If you are just starting out, you might get an error about a package missing (such as pgf or xycolors). If so, the LaTeX installation you have might have a package manager you can use to install the packages. For example, MiKTeX has one that is typically installed in the Start Menu (on Windows), and is called "MiKTeX Package Manager". Using this application, search for the package that is missing, right click on it, and choose Install. Then come back to RStudio and try again. 
+
+The full PDF file from this post can be viewed [here](https://github.com/rer145/DATA650-latex/blob/master/dracula.pdf).
+
+### The Code
+
+The full code for this article can be found on my [GitHub Gist Page](https://gist.github.com/rer145/3f6ac0c926b2a71713725bd07d49a8bb).

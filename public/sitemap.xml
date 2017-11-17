@@ -3,267 +3,278 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/project/project1/</loc>
+    <loc>http://www.learningrfordatascience.com/project/project1/</loc>
   </url>
   
   <url>
-    <loc>/project/project2/</loc>
+    <loc>http://www.learningrfordatascience.com/project/project2/</loc>
   </url>
   
   <url>
-    <loc>/project/project3/</loc>
+    <loc>http://www.learningrfordatascience.com/project/project3/</loc>
   </url>
   
   <url>
-    <loc>/project/project4/</loc>
+    <loc>http://www.learningrfordatascience.com/project/project4/</loc>
   </url>
   
   <url>
-    <loc>/post/dynamic-wordclouds-with-wordcloud2/</loc>
+    <loc>http://www.learningrfordatascience.com/post/creating-pdf-slide-presesentations-with-latex/</loc>
+    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.learningrfordatascience.com/post/dynamic-wordclouds-with-wordcloud2/</loc>
     <lastmod>2017-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/combining-multiple-wordclouds-into-one/</loc>
+    <loc>http://www.learningrfordatascience.com/post/combining-multiple-wordclouds-into-one/</loc>
     <lastmod>2017-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/using-ggplot-introduction-to-facet-wrap/</loc>
+    <loc>http://www.learningrfordatascience.com/post/using-ggplot-introduction-to-facet-wrap/</loc>
     <lastmod>2017-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/simple-sentiment-analysis/</loc>
+    <loc>http://www.learningrfordatascience.com/post/simple-sentiment-analysis/</loc>
     <lastmod>2017-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/creating-pdf-articles-with-latex/</loc>
+    <loc>http://www.learningrfordatascience.com/post/creating-pdf-articles-with-latex/</loc>
     <lastmod>2017-10-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/creating-a-wordcloud/</loc>
+    <loc>http://www.learningrfordatascience.com/post/creating-a-wordcloud/</loc>
     <lastmod>2017-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/cleaning-data-with-stringr/</loc>
+    <loc>http://www.learningrfordatascience.com/post/cleaning-data-with-stringr/</loc>
     <lastmod>2017-10-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/introducing-flexdashboard/</loc>
+    <loc>http://www.learningrfordatascience.com/post/introducing-flexdashboard/</loc>
     <lastmod>2017-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/using-ggplot-interactive-bar-plots/</loc>
+    <loc>http://www.learningrfordatascience.com/post/using-ggplot-interactive-bar-plots/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/using-ggplot-time-series/</loc>
+    <loc>http://www.learningrfordatascience.com/post/using-ggplot-time-series/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/using-ggplot-bar-plots/</loc>
+    <loc>http://www.learningrfordatascience.com/post/using-ggplot-bar-plots/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/using-ggplot-histograms/</loc>
+    <loc>http://www.learningrfordatascience.com/post/using-ggplot-histograms/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/using-ggplot-scatterplots/</loc>
+    <loc>http://www.learningrfordatascience.com/post/using-ggplot-scatterplots/</loc>
     <lastmod>2017-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/lahman-database-using-dplyr/</loc>
+    <loc>http://www.learningrfordatascience.com/post/lahman-database-using-dplyr/</loc>
     <lastmod>2017-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/bootstrap/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/beamer/</loc>
+    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/bootstrap/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/charts/</loc>
+    <loc>http://www.learningrfordatascience.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.learningrfordatascience.com/tags/charts/</loc>
     <lastmod>2017-11-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/css/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/css/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/dashboard/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/dashboard/</loc>
     <lastmod>2017-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/data-650/</loc>
+    <loc>http://www.learningrfordatascience.com/categories/data-650/</loc>
     <lastmod>2017-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/dplyr/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/dplyr/</loc>
     <lastmod>2017-10-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/ggiraph/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/ggiraph/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/ggplot/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/ggplot/</loc>
     <lastmod>2017-11-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/ggplot/</loc>
+    <loc>http://www.learningrfordatascience.com/categories/ggplot/</loc>
     <lastmod>2017-11-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/go/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/go/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/golang/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/golang/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/highlight-js/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/highlight-js/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/html/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/html/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/hugo/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/hugo/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/js/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/js/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/latex/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/latex/</loc>
+    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.learningrfordatascience.com/categories/latex/</loc>
     <lastmod>2017-10-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/latex/</loc>
-    <lastmod>2017-10-29T00:00:00+00:00</lastmod>
+    <loc>http://www.learningrfordatascience.com/</loc>
+    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-11-13T00:00:00+00:00</lastmod>
+    <loc>http://www.learningrfordatascience.com/post/</loc>
+    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2017-11-13T00:00:00+00:00</lastmod>
+    <loc>http://www.learningrfordatascience.com/project/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/project/</loc>
+    <loc>http://www.learningrfordatascience.com/categories/r/</loc>
+    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2017-11-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/regex/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/regex/</loc>
     <lastmod>2017-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/responsive/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/responsive/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/sentiment-analysis/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/sentiment-analysis/</loc>
     <lastmod>2017-11-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/stringr/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/stringr/</loc>
     <lastmod>2017-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/syntax-highlighting/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/syntax-highlighting/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2017-11-10T00:00:00+00:00</lastmod>
+    <loc>http://www.learningrfordatascience.com/tags/</loc>
+    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/tidytext/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/tidytext/</loc>
     <lastmod>2017-11-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/visualization/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/visualization/</loc>
     <lastmod>2017-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/wordcloud/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/wordcloud/</loc>
     <lastmod>2017-11-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/wordcloud2/</loc>
+    <loc>http://www.learningrfordatascience.com/tags/wordcloud2/</loc>
     <lastmod>2017-11-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

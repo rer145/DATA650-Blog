@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ggplot on Learning R for Data Science</title>
-    <link>/categories/ggplot/</link>
+    <link>http://www.learningrfordatascience.com/categories/ggplot/</link>
     <description>Recent content in Ggplot on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/ggplot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.learningrfordatascience.com/categories/ggplot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using ggplot - Introduction to facet_wrap</title>
-      <link>/post/using-ggplot-introduction-to-facet-wrap/</link>
+      <link>http://www.learningrfordatascience.com/post/using-ggplot-introduction-to-facet-wrap/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/using-ggplot-introduction-to-facet-wrap/</guid>
+      <guid>http://www.learningrfordatascience.com/post/using-ggplot-introduction-to-facet-wrap/</guid>
       <description>IntroductionIn our last post “Simple Sentiment Analysis”, we learned how to categorize the sentiment of a novel, and plot the positive/negative trend into one plot. In this post, we will look at a function called facet_wrap, which will allow us plot both the negative and positive sentiments on two different plots, side-by-side.
 Gathering our DataWe will continue to analyze the novel “Dracula”, just like in the last post, splitting apart the lines of text into words and counting the occurrence of each.</description>
     </item>

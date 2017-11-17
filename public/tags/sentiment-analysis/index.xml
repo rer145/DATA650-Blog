@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sentiment Analysis on Learning R for Data Science</title>
-    <link>/tags/sentiment-analysis/</link>
+    <link>http://www.learningrfordatascience.com/tags/sentiment-analysis/</link>
     <description>Recent content in Sentiment Analysis on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/sentiment-analysis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.learningrfordatascience.com/tags/sentiment-analysis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple Sentiment Analysis</title>
-      <link>/post/simple-sentiment-analysis/</link>
+      <link>http://www.learningrfordatascience.com/post/simple-sentiment-analysis/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/simple-sentiment-analysis/</guid>
+      <guid>http://www.learningrfordatascience.com/post/simple-sentiment-analysis/</guid>
       <description>IntroductionThe tidytext package in R provides a few functions and dataframes for sentiment analysis. Sentiment analysis is a way to determine the “feeling” a word represents. For example, the word “abhor” gives a negative vibe to it, whereas “sunshine” gives a positive vibe. Additionally, the word “agonize” is more negative than “afflicted”.
 Getting Data to AnalyzeWe will be using the gutenbergr package in R to get the text from the novel Frankenstein.</description>
     </item>
