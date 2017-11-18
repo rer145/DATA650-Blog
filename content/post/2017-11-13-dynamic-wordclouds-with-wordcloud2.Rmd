@@ -78,6 +78,13 @@ wordcloud2(words, figPath='/static/bat.jpg')
 It appears that the setup currently applied to this blog will not allow the dynamic version of wordcloud2 to execute within a post. The images above were saved to files using a code snippet found [here](https://github.com/Lchiffon/wordcloud2/issues/8). This method saves the wordcloud2 (which is build using the htmlwidgets R package) to an HTML file, and then uses phantomjs from the webshot R package to convert it to an image file. The code to save the wordcloud2 output to an image file is below.  This method, however, does not appear to work when using a custom shape via the figPath parameter.
 
 ```{r eval=FALSE}
+library(htmlwidgets)
+library(webshot)
+
+# This command only needs to be run once, the first time after 
+# installing the above packages
+webshot::install_phantomjs()
+
 wc = wordcloud2(words, shape='triangle', backgroundColor='black')
 saveWidget(wc,"wordcloud.html",selfcontained = F)
 webshot::webshot("wordcloud.html","wordcloud.png",vwidth = 1992, vheight = 1744, delay = 60)
