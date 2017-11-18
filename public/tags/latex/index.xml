@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Latex on Learning R for Data Science</title>
-    <link>/tags/latex/</link>
+    <link>http://www.learningrfordatascience.com/tags/latex/</link>
     <description>Recent content in Latex on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.learningrfordatascience.com/tags/latex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating PDF Slide Presesentations with LaTeX</title>
-      <link>/post/creating-pdf-slide-presesentations-with-latex/</link>
+      <link>http://www.learningrfordatascience.com/post/creating-pdf-slide-presesentations-with-latex/</link>
       <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/creating-pdf-slide-presesentations-with-latex/</guid>
+      <guid>http://www.learningrfordatascience.com/post/creating-pdf-slide-presesentations-with-latex/</guid>
       <description>IntroductionIn the post “Creating PDF Articles with LaTeX”, we created an article and converted it to PDF with LaTeX. In this article, we will create a slideshow type presentation and convert it to PDF using beamer and LaTeX.
 Creating the DocumentSimilar to the article setup, we need to create our document and start the title. For the article, we used a document class of “article”, but for this type, we will use the document class of “beamer”.</description>
     </item>
     
     <item>
       <title>Creating PDF Articles with LaTeX</title>
-      <link>/post/creating-pdf-articles-with-latex/</link>
+      <link>http://www.learningrfordatascience.com/post/creating-pdf-articles-with-latex/</link>
       <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/creating-pdf-articles-with-latex/</guid>
+      <guid>http://www.learningrfordatascience.com/post/creating-pdf-articles-with-latex/</guid>
       <description>IntroductionOften times in data science, or other areas of study, the requirement of writing an article and converting it to PDF will be needed. This post will demonstrate how to use LaTeX to create an article. Our example will be using an R package called janeaustenr to create a wordcloud from her novel “Sense &amp;amp; Sensibility”.
 Gathering the DataFirst, we will import our libraries and store the data we want to use in a dataframe.</description>
     </item>
