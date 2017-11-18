@@ -106,7 +106,7 @@ We will add one more slide to our presentation, and it will only contain the cod
 
 Using knitr from within R Studio, compile the file to a PDF. If you are just starting out, you might get an error about a package missing (such as pgf or xycolors). If so, the LaTeX installation you have might have a package manager you can use to install the packages. For example, MiKTeX has one that is typically installed in the Start Menu (on Windows), and is called "MiKTeX Package Manager". Using this application, search for the package that is missing, right click on it, and choose Install. Then come back to RStudio and try again. 
 
-The full PDF file from this post can be viewed [here](https://github.com/rer145/DATA650-latex/blob/master/dracula.pdf).
+The full PDF file from this post can be viewed [here](https://github.com/rer145/DATA650-latex/raw/master/dracula.pdf).
 
 ### The Code
 
