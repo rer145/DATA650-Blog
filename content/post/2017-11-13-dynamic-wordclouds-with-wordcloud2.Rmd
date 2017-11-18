@@ -62,7 +62,7 @@ wordcloud2(words, shape='triangle', backgroundColor='black')
 
 ![](/static/wordcloud2-example.png)
 
-[View Interactive Version](/static/wordcloud2-example.html)
+[View Interactive Version](https://rer145.github.io/special-succotash/wordcloud2-example.html)
 
 Another fun way to use wordcloud2 is to plot the wordcloud using an image of any shape. The image must have a clear delineation between light and dark colors.  Here, we have a simple image of a bat, which we can pass to wordcloud2 and its shape will resemble our image.
 
