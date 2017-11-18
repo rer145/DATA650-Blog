@@ -94,6 +94,10 @@
   </url>
   
   <url>
+    <loc>/post/wordcloud2-example/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/beamer/</loc>
     <lastmod>2017-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>

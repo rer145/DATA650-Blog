@@ -56,15 +56,36 @@ Wordcloud2 has several options for how to shape the wordcloud. The available sha
 
 For this example, we will make a triangle of the words, and also change the background color to be black.
 
-```{r message=FALSE, warning=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 wordcloud2(words, shape='triangle', backgroundColor='black')
 ```
 
+![](wordcloud2-example.png)
+
+[View Interactive Version](wordcloud2-example.html)
+
 Another fun way to use wordcloud2 is to plot the wordcloud using an image of any shape. The image must have a clear delineation between light and dark colors.  Here, we have a simple image of a bat, which we can pass to wordcloud2 and its shape will resemble our image.
 
-```{r message=FALSE, warning=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 wordcloud2(words, figPath='bat.jpg')
 ```
+
+![](wordcloud2-example-fig.png)
+
+[View Interactive Version](wordcloud2-example-fig.html)
+
+
+## Displaying wordcloud2 Output
+
+It appears that the setup currently applied to this blog will not allow the dynamic version of wordcloud2 to execute within a post. The images above were saved to files using a code snippet found [here](https://github.com/Lchiffon/wordcloud2/issues/8). This method saves the wordcloud2 (which is build using the htmlwidgets R package) to an HTML file, and then uses phantomjs from the webshot R package to convert it to an image file. The code to save the wordcloud2 output to an image file is below.  This method, however, does not appear to work when using a custom shape via the figPath parameter.
+
+```{r eval=FALSE}
+wc = wordcloud2(words, shape='triangle', backgroundColor='black')
+saveWidget(wc,"wordcloud.html",selfcontained = F)
+webshot::webshot("wordcloud.html","wordcloud.png",vwidth = 1992, vheight = 1744, delay =10)
+```
+
+
 
 ### The Code
 
