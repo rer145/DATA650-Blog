@@ -60,17 +60,17 @@ For this example, we will make a triangle of the words, and also change the back
 wordcloud2(words, shape='triangle', backgroundColor='black')
 ```
 
-![]({{< resource url="static/wordcloud2-example.png" >}})
+![](/static/wordcloud2-example.png)
 
-[View Interactive Version]({{< resource url="static/wordcloud2-example.html" >}})
+[View Interactive Version](/static/wordcloud2-example.html)
 
 Another fun way to use wordcloud2 is to plot the wordcloud using an image of any shape. The image must have a clear delineation between light and dark colors.  Here, we have a simple image of a bat, which we can pass to wordcloud2 and its shape will resemble our image.
 
 ```{r eval=FALSE, message=FALSE, warning=FALSE}
-wordcloud2(words, figPath='bat.jpg')
+wordcloud2(words, figPath='/static/bat.jpg')
 ```
 
-![]({{< resource url="static/wordcloud2-example-fig.png" >}})
+![](/static/wordcloud2-example-fig.png)
 
 
 ## Displaying wordcloud2 Output
@@ -80,7 +80,7 @@ It appears that the setup currently applied to this blog will not allow the dyna
 ```{r eval=FALSE}
 wc = wordcloud2(words, shape='triangle', backgroundColor='black')
 saveWidget(wc,"wordcloud.html",selfcontained = F)
-webshot::webshot("wordcloud.html","wordcloud.png",vwidth = 1992, vheight = 1744, delay =10)
+webshot::webshot("wordcloud.html","wordcloud.png",vwidth = 1992, vheight = 1744, delay = 60)
 ```
 
 
