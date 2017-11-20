@@ -58,7 +58,14 @@ dracula&lt;-inner_join(dracula, bing)</code></pre>
 <div id="displaying-wordcloud2-output" class="section level2">
 <h2>Displaying wordcloud2 Output</h2>
 <p>It appears that the setup currently applied to this blog will not allow the dynamic version of wordcloud2 to execute within a post. The images above were saved to files using a code snippet found <a href="https://github.com/Lchiffon/wordcloud2/issues/8">here</a>. This method saves the wordcloud2 (which is build using the htmlwidgets R package) to an HTML file, and then uses phantomjs from the webshot R package to convert it to an image file. The code to save the wordcloud2 output to an image file is below. This method, however, does not appear to work when using a custom shape via the figPath parameter.</p>
-<pre class="r"><code>wc = wordcloud2(words, shape=&#39;triangle&#39;, backgroundColor=&#39;black&#39;)
+<pre class="r"><code>library(htmlwidgets)
+library(webshot)
+
+# This command only needs to be run once, the first time after 
+# installing the above packages
+webshot::install_phantomjs()
+
+wc = wordcloud2(words, shape=&#39;triangle&#39;, backgroundColor=&#39;black&#39;)
 saveWidget(wc,&quot;wordcloud.html&quot;,selfcontained = F)
 webshot::webshot(&quot;wordcloud.html&quot;,&quot;wordcloud.png&quot;,vwidth = 1992, vheight = 1744, delay = 60)</code></pre>
 <div id="the-code" class="section level3">

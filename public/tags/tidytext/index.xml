@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tidytext on Learning R for Data Science</title>
-    <link>http://www.learningrfordatascience.com/tags/tidytext/</link>
+    <link>/tags/tidytext/</link>
     <description>Recent content in Tidytext on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.learningrfordatascience.com/tags/tidytext/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/tidytext/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple Sentiment Analysis</title>
-      <link>http://www.learningrfordatascience.com/post/simple-sentiment-analysis/</link>
+      <link>/post/simple-sentiment-analysis/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/simple-sentiment-analysis/</guid>
+      <guid>/post/simple-sentiment-analysis/</guid>
       <description>IntroductionThe tidytext package in R provides a few functions and dataframes for sentiment analysis. Sentiment analysis is a way to determine the “feeling” a word represents. For example, the word “abhor” gives a negative vibe to it, whereas “sunshine” gives a positive vibe. Additionally, the word “agonize” is more negative than “afflicted”.
 Getting Data to AnalyzeWe will be using the gutenbergr package in R to get the text from the novel Frankenstein.</description>
     </item>
     
     <item>
       <title>Creating a Wordcloud</title>
-      <link>http://www.learningrfordatascience.com/post/creating-a-wordcloud/</link>
+      <link>/post/creating-a-wordcloud/</link>
       <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/creating-a-wordcloud/</guid>
+      <guid>/post/creating-a-wordcloud/</guid>
       <description>IntroductionA wordcloud is a common visualization to show how often a word is repeated in a set of text. The words appear on the image and the larger the word, the more common it is in the text. In this example, we will be evaluating Jane Austen’s novel “Sense &amp;amp; Sensibility”, which is available via the R package janeaustenr.
 Gathering and Cleaning the DataFirst, we will import our libraries and using the austen_books() funtion from janeaustenr, filter out the book “Sense &amp;amp; Sensibility”.</description>
     </item>

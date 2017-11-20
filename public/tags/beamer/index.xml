@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beamer on Learning R for Data Science</title>
-    <link>http://www.learningrfordatascience.com/tags/beamer/</link>
+    <link>/tags/beamer/</link>
     <description>Recent content in Beamer on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.learningrfordatascience.com/tags/beamer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/beamer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating PDF Slide Presesentations with LaTeX</title>
-      <link>http://www.learningrfordatascience.com/post/creating-pdf-slide-presesentations-with-latex/</link>
+      <link>/post/creating-pdf-slide-presesentations-with-latex/</link>
       <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/creating-pdf-slide-presesentations-with-latex/</guid>
+      <guid>/post/creating-pdf-slide-presesentations-with-latex/</guid>
       <description>IntroductionIn the post “Creating PDF Articles with LaTeX”, we created an article and converted it to PDF with LaTeX. In this article, we will create a slideshow type presentation and convert it to PDF using beamer and LaTeX.
 Creating the DocumentSimilar to the article setup, we need to create our document and start the title. For the article, we used a document class of “article”, but for this type, we will use the document class of “beamer”.</description>
     </item>

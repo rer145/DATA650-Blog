@@ -102,6 +102,30 @@ We will add one more slide to our presentation, and it will only contain the cod
 \end{frame}
 ```
 
+## Adding Framebreaks
+
+Sometimes, we have a large amount of code to display, but want to break it up into two or more slides. We can do this with a framebreak. To create a framebreak, we first must add "allowframebreaks" to the begin frame declaration. Then, inside the content of the slide, add the framebreak command where the frame should break.
+
+In this example, we want the code to join two dataframes to show up on one slide, and the actual data of the dataframe in another. Notice the title of each slide is updated with the same title and a counter of the current frame.
+
+```{r eval=FALSE}
+\section{Joining Positive and Negative Words}
+\begin{frame}[allowframebreaks, fragile]
+  \frametitle{Joining Positive and Negative Words}
+  <<warning=FALSE, message=FALSE>>=
+  words_pos$word<-factor(words_pos$word, levels=words_pos$word)
+  words_neg$word<-factor(words_neg$word, levels=words_neg$word)
+  
+  words<-rbind(words_pos, words_neg)
+  @
+  \framebreak
+  <<warning=FALSE, message=FALSE>>=
+  words
+  @
+\end{frame}
+```
+
+
 ## Generating the PDF file
 
 Using knitr from within R Studio, compile the file to a PDF. If you are just starting out, you might get an error about a package missing (such as pgf or xycolors). If so, the LaTeX installation you have might have a package manager you can use to install the packages. For example, MiKTeX has one that is typically installed in the Start Menu (on Windows), and is called "MiKTeX Package Manager". Using this application, search for the package that is missing, right click on it, and choose Install. Then come back to RStudio and try again. 

@@ -2,141 +2,141 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Learning R for Data Science</title>
-    <link>http://www.learningrfordatascience.com/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Learning R for Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.learningrfordatascience.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating PDF Slide Presesentations with LaTeX</title>
-      <link>http://www.learningrfordatascience.com/post/creating-pdf-slide-presesentations-with-latex/</link>
+      <link>/post/creating-pdf-slide-presesentations-with-latex/</link>
       <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/creating-pdf-slide-presesentations-with-latex/</guid>
+      <guid>/post/creating-pdf-slide-presesentations-with-latex/</guid>
       <description>IntroductionIn the post “Creating PDF Articles with LaTeX”, we created an article and converted it to PDF with LaTeX. In this article, we will create a slideshow type presentation and convert it to PDF using beamer and LaTeX.
 Creating the DocumentSimilar to the article setup, we need to create our document and start the title. For the article, we used a document class of “article”, but for this type, we will use the document class of “beamer”.</description>
     </item>
     
     <item>
       <title>Dynamic Wordclouds with Wordcloud2</title>
-      <link>http://www.learningrfordatascience.com/post/dynamic-wordclouds-with-wordcloud2/</link>
+      <link>/post/dynamic-wordclouds-with-wordcloud2/</link>
       <pubDate>Mon, 13 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/dynamic-wordclouds-with-wordcloud2/</guid>
+      <guid>/post/dynamic-wordclouds-with-wordcloud2/</guid>
       <description>IntroductionWordclouds are great tools to quickly see the words used in a piece of text, but they can get boring to look at. In this post, we introduce a new R package called wordcloud2. This package will dynamically plot the wordcloud on screen, add hoverability to each word, and be able to form the wordcloud into different shapes.
 Getting our DataOnce again, we will use the text from Bram Stoker’s “Dracula”.</description>
     </item>
     
     <item>
       <title>Combining Multiple Wordclouds into one</title>
-      <link>http://www.learningrfordatascience.com/post/combining-multiple-wordclouds-into-one/</link>
+      <link>/post/combining-multiple-wordclouds-into-one/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/combining-multiple-wordclouds-into-one/</guid>
+      <guid>/post/combining-multiple-wordclouds-into-one/</guid>
       <description>IntroductionIn the previous post titled “Simple Sentiment Analysis”, we plotted both positive and negative words onto one line chart. In “Using ggplot - Introduction to facet_wrap()”, we combined two different bar charts into one plot, but positive and negative words were separated. In this example, we will do something similar, but with wordclouds.
 Getting Data to AnalyzeWe have previously built a wordcloud using Jane Austen’s novel “Sense &amp;amp; Sensibility”, but for this example, will continue using Bram Stoker’s “Dracula” to create a positive and negative wordcloud.</description>
     </item>
     
     <item>
       <title>Using ggplot - Introduction to facet_wrap</title>
-      <link>http://www.learningrfordatascience.com/post/using-ggplot-introduction-to-facet-wrap/</link>
+      <link>/post/using-ggplot-introduction-to-facet-wrap/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/using-ggplot-introduction-to-facet-wrap/</guid>
+      <guid>/post/using-ggplot-introduction-to-facet-wrap/</guid>
       <description>IntroductionIn our last post “Simple Sentiment Analysis”, we learned how to categorize the sentiment of a novel, and plot the positive/negative trend into one plot. In this post, we will look at a function called facet_wrap, which will allow us plot both the negative and positive sentiments on two different plots, side-by-side.
 Gathering our DataWe will continue to analyze the novel “Dracula”, just like in the last post, splitting apart the lines of text into words and counting the occurrence of each.</description>
     </item>
     
     <item>
       <title>Simple Sentiment Analysis</title>
-      <link>http://www.learningrfordatascience.com/post/simple-sentiment-analysis/</link>
+      <link>/post/simple-sentiment-analysis/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/simple-sentiment-analysis/</guid>
+      <guid>/post/simple-sentiment-analysis/</guid>
       <description>IntroductionThe tidytext package in R provides a few functions and dataframes for sentiment analysis. Sentiment analysis is a way to determine the “feeling” a word represents. For example, the word “abhor” gives a negative vibe to it, whereas “sunshine” gives a positive vibe. Additionally, the word “agonize” is more negative than “afflicted”.
 Getting Data to AnalyzeWe will be using the gutenbergr package in R to get the text from the novel Frankenstein.</description>
     </item>
     
     <item>
       <title>Creating PDF Articles with LaTeX</title>
-      <link>http://www.learningrfordatascience.com/post/creating-pdf-articles-with-latex/</link>
+      <link>/post/creating-pdf-articles-with-latex/</link>
       <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/creating-pdf-articles-with-latex/</guid>
+      <guid>/post/creating-pdf-articles-with-latex/</guid>
       <description>IntroductionOften times in data science, or other areas of study, the requirement of writing an article and converting it to PDF will be needed. This post will demonstrate how to use LaTeX to create an article. Our example will be using an R package called janeaustenr to create a wordcloud from her novel “Sense &amp;amp; Sensibility”.
 Gathering the DataFirst, we will import our libraries and store the data we want to use in a dataframe.</description>
     </item>
     
     <item>
       <title>Creating a Wordcloud</title>
-      <link>http://www.learningrfordatascience.com/post/creating-a-wordcloud/</link>
+      <link>/post/creating-a-wordcloud/</link>
       <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/creating-a-wordcloud/</guid>
+      <guid>/post/creating-a-wordcloud/</guid>
       <description>IntroductionA wordcloud is a common visualization to show how often a word is repeated in a set of text. The words appear on the image and the larger the word, the more common it is in the text. In this example, we will be evaluating Jane Austen’s novel “Sense &amp;amp; Sensibility”, which is available via the R package janeaustenr.
 Gathering and Cleaning the DataFirst, we will import our libraries and using the austen_books() funtion from janeaustenr, filter out the book “Sense &amp;amp; Sensibility”.</description>
     </item>
     
     <item>
       <title>Cleaning Data with stringr</title>
-      <link>http://www.learningrfordatascience.com/post/cleaning-data-with-stringr/</link>
+      <link>/post/cleaning-data-with-stringr/</link>
       <pubDate>Sun, 08 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/cleaning-data-with-stringr/</guid>
+      <guid>/post/cleaning-data-with-stringr/</guid>
       <description>IntroductionOccassionally, when we are using a set of data, there may be mistakes. Before we can really make any decisions or visualizations using that data, we must ensure it is as accurate as possible. In this post, we will look at using the R library stringr to filter out unwanted data.
 Basic ExampleFor this example, we will be using a data set from (Kaggle.com)[https://www.kaggle.com/orangutan/exploratory-analysis-of-the-korean-war] that contains all the US deaths from the Korean War.</description>
     </item>
     
     <item>
       <title>Introducing flexdashboard</title>
-      <link>http://www.learningrfordatascience.com/post/introducing-flexdashboard/</link>
+      <link>/post/introducing-flexdashboard/</link>
       <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/introducing-flexdashboard/</guid>
+      <guid>/post/introducing-flexdashboard/</guid>
       <description>IntroductionDashboards are great tools for grouping common visualizations together into one page or site. This allows the user to consume large amounts of visualizations in a quick and easy method.
 Example DashboardA search for dashboard on Google will result in millions of results. To show you a real life example, I have built a simple dashboard showing some basic statistics of my golf game over the last few years.</description>
     </item>
     
     <item>
       <title>Using ggplot - Interactive Bar Plots</title>
-      <link>http://www.learningrfordatascience.com/post/using-ggplot-interactive-bar-plots/</link>
+      <link>/post/using-ggplot-interactive-bar-plots/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/using-ggplot-interactive-bar-plots/</guid>
+      <guid>/post/using-ggplot-interactive-bar-plots/</guid>
       <description>IntroductionSometimes, just having a chart isn’t enough. When working on the web, interactivity is key to capturing a user’s interest and attention. One simple way of doing so, is by adding a tooltip or hover effect to the data points. Not only is this great for the user’s attention, it helps with the readability of the data as well.
 Basic ExampleWe are introducing a new library called ggiraph.</description>
     </item>
     
     <item>
       <title>Using ggplot - Time Series</title>
-      <link>http://www.learningrfordatascience.com/post/using-ggplot-time-series/</link>
+      <link>/post/using-ggplot-time-series/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/using-ggplot-time-series/</guid>
+      <guid>/post/using-ggplot-time-series/</guid>
       <description>IntroductionA new chart to introduce is called a time series. This type is used when you want to visualize data along a period of time. The x-axis represents the time and the y-axis represents the data. This is a subset of the line graph, as a line graph doesn’t have a precondition of the x-axis representing time.
 Basic ExampleFor this example we will use the number of home runs that Babe Ruth during his career.</description>
     </item>
     
     <item>
       <title>Using ggplot - Bar Plots</title>
-      <link>http://www.learningrfordatascience.com/post/using-ggplot-bar-plots/</link>
+      <link>/post/using-ggplot-bar-plots/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/using-ggplot-bar-plots/</guid>
+      <guid>/post/using-ggplot-bar-plots/</guid>
       <description>IntroductionA bar plot uses rectangular bars (like a histogram) to represent data that is grouped into a series, sized accordingly based on the numerical value associated with it. The rectangular bars can be displayed either vertically or horizontally.
 Basic ExampleFirst, we must gather our data. For this example, we will gather the number of home runs a team hit in 1980. For this purpose, we are ordering the results by the number of home runs hit.</description>
     </item>
     
     <item>
       <title>Using ggplot - Histograms</title>
-      <link>http://www.learningrfordatascience.com/post/using-ggplot-histograms/</link>
+      <link>/post/using-ggplot-histograms/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/using-ggplot-histograms/</guid>
+      <guid>/post/using-ggplot-histograms/</guid>
       <description>IntroductionA histogram uses rectangular bars to represent data that is grouped into a series, sized accordingly based on the numerical value associated with it. The rectangular bars can be displayed either vertically or horizontally.
 Basic ExampleFirst, we must gather our data. Here we are using the Lahman database and obtaining all of the weights of baseball players throughout the years.
 #import librarieslibrary(Lahman)library(dplyr)library(ggplot2)#store data into a variable named dfdf&amp;lt;-Master %&amp;gt;%filter(!</description>
@@ -144,20 +144,20 @@
     
     <item>
       <title>Using ggplot - Scatterplots</title>
-      <link>http://www.learningrfordatascience.com/post/using-ggplot-scatterplots/</link>
+      <link>/post/using-ggplot-scatterplots/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/using-ggplot-scatterplots/</guid>
+      <guid>/post/using-ggplot-scatterplots/</guid>
       <description>IntroductionA scatterplot is a useful visualization that compares two series of numbers against each other. This can be great for determining a correlation between the series. In our example below, we will compare Babe Ruth’s career home runs against his career strikeouts to see if there is any relationship between how many home runs he hit and if that means more strike outs.
 Basic ExampleFirst we need to import our libraries and gather our basic data.</description>
     </item>
     
     <item>
       <title>Lahman database using dplyr</title>
-      <link>http://www.learningrfordatascience.com/post/lahman-database-using-dplyr/</link>
+      <link>/post/lahman-database-using-dplyr/</link>
       <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.learningrfordatascience.com/post/lahman-database-using-dplyr/</guid>
+      <guid>/post/lahman-database-using-dplyr/</guid>
       <description>IntroductionThe Lahman database is a publically accessible database of baseball statistics. This database contains multiple tables of data from a large time series, which makes it great to run experiments against.
 dplyr is an R package which allows programmatic access to this data using concepts very similar to T-SQL.
 InitializationsOnce the packages are installed, they need to be loaded into the environemnt. This is accomplished with two lines of code.</description>

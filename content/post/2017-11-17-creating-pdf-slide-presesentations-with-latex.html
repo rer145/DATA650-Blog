@@ -86,6 +86,25 @@ tags:
   @
 \end{frame}</code></pre>
 </div>
+<div id="adding-framebreaks" class="section level2">
+<h2>Adding Framebreaks</h2>
+<p>Sometimes, we have a large amount of code to display, but want to break it up into two or more slides. We can do this with a framebreak. To create a framebreak, we first must add “allowframebreaks” to the begin frame declaration. Then, inside the content of the slide, add the framebreak command where the frame should break.</p>
+<p>In this example, we want the code to join two dataframes to show up on one slide, and the actual data of the dataframe in another. Notice the title of each slide is updated with the same title and a counter of the current frame.</p>
+<pre class="r"><code>\section{Joining Positive and Negative Words}
+\begin{frame}[allowframebreaks, fragile]
+  \frametitle{Joining Positive and Negative Words}
+  &lt;&lt;warning=FALSE, message=FALSE&gt;&gt;=
+  words_pos$word&lt;-factor(words_pos$word, levels=words_pos$word)
+  words_neg$word&lt;-factor(words_neg$word, levels=words_neg$word)
+  
+  words&lt;-rbind(words_pos, words_neg)
+  @
+  \framebreak
+  &lt;&lt;warning=FALSE, message=FALSE&gt;&gt;=
+  words
+  @
+\end{frame}</code></pre>
+</div>
 <div id="generating-the-pdf-file" class="section level2">
 <h2>Generating the PDF file</h2>
 <p>Using knitr from within R Studio, compile the file to a PDF. If you are just starting out, you might get an error about a package missing (such as pgf or xycolors). If so, the LaTeX installation you have might have a package manager you can use to install the packages. For example, MiKTeX has one that is typically installed in the Start Menu (on Windows), and is called “MiKTeX Package Manager”. Using this application, search for the package that is missing, right click on it, and choose Install. Then come back to RStudio and try again.</p>

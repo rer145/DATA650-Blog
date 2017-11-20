@@ -19,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Ron Richardson">
-    <meta property="og:url" content="http://www.learningrfordatascience.com/post/dynamic-wordclouds-with-wordcloud2/">
+    <meta property="og:url" content="/post/dynamic-wordclouds-with-wordcloud2/">
 
     <title>Dynamic Wordclouds with Wordcloud2 - Learning R for Data Science</title>
     <meta property="og:title" content="Dynamic Wordclouds with Wordcloud2 - Learning R for Data Science">
@@ -37,7 +37,7 @@
     <div class="container">
 
       <nav class="site-nav">
-        <a href="http://www.learningrfordatascience.com/">Index</a>
+        <a href="/">Index</a>
       </nav>
 
 
@@ -93,7 +93,14 @@ dracula&lt;-inner_join(dracula, bing)</code></pre>
 <div id="displaying-wordcloud2-output" class="section level2">
 <h2>Displaying wordcloud2 Output</h2>
 <p>It appears that the setup currently applied to this blog will not allow the dynamic version of wordcloud2 to execute within a post. The images above were saved to files using a code snippet found <a href="https://github.com/Lchiffon/wordcloud2/issues/8">here</a>. This method saves the wordcloud2 (which is build using the htmlwidgets R package) to an HTML file, and then uses phantomjs from the webshot R package to convert it to an image file. The code to save the wordcloud2 output to an image file is below. This method, however, does not appear to work when using a custom shape via the figPath parameter.</p>
-<pre class="r"><code>wc = wordcloud2(words, shape=&#39;triangle&#39;, backgroundColor=&#39;black&#39;)
+<pre class="r"><code>library(htmlwidgets)
+library(webshot)
+
+# This command only needs to be run once, the first time after 
+# installing the above packages
+webshot::install_phantomjs()
+
+wc = wordcloud2(words, shape=&#39;triangle&#39;, backgroundColor=&#39;black&#39;)
 saveWidget(wc,&quot;wordcloud.html&quot;,selfcontained = F)
 webshot::webshot(&quot;wordcloud.html&quot;,&quot;wordcloud.png&quot;,vwidth = 1992, vheight = 1744, delay = 60)</code></pre>
 <div id="the-code" class="section level3">
@@ -108,7 +115,7 @@ webshot::webshot(&quot;wordcloud.html&quot;,&quot;wordcloud.png&quot;,vwidth = 1
 
       <footer class="site-footer">
         <span itemscope itemtype="http://schema.org/Person">
-          <link itemprop="url" href="http://www.learningrfordatascience.com/">
+          <link itemprop="url" href="/">
           <span itemprop="name">Ron Richardson</span>
 
           ,
